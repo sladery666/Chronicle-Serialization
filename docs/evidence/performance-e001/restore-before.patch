@@ -1,0 +1,395 @@
+--- a/include/chronicle/binary_writer.hpp
++++ b/include/chronicle/binary_writer.hpp
+@@ -9,7 +9,6 @@
+ inline constexpr std::uint32_t maxArrayElements = 100000;
+ class BinaryWriter {
+   public:
+-    void reserve(std::size_t capacity);
+     void writeU8(std::uint8_t value);
+     void writeU16(std::uint16_t value);
+     void writeU32(std::uint32_t value);
+--- a/include/chronicle/byte_buffer.hpp
++++ b/include/chronicle/byte_buffer.hpp
+@@ -1,18 +1,10 @@
+ #pragma once
+ #include <cstddef>
+-#include <functional>
+ #include <span>
+-#include <utility>
+ #include <vector>
+ namespace chronicle {
+ class ByteBuffer {
+   public:
+-    ByteBuffer() = default;
+-    explicit ByteBuffer(std::vector<std::byte> bytes)
+-        : bytes_(std::move(bytes)) {}
+-    void reserve(std::size_t capacity) {
+-        bytes_.reserve(capacity);
+-    }
+     std::size_t size() const noexcept {
+         return bytes_.size();
+     }
+@@ -23,20 +15,9 @@
+         return bytes_;
+     }
+     void append(std::span<const std::byte> bytes) {
+-        if (bytes.empty()) {
+-            return;
+-        }
+-        const auto less = std::less<const std::byte*>{};
+-        const bool aliases = !bytes_.empty() &&
+-                             !less(bytes.data(), bytes_.data()) &&
+-                             less(bytes.data(), bytes_.data() + bytes_.size());
+-        if (aliases) {
+-            // Snapshot only self-append; insertion may invalidate its source.
+-            const std::vector<std::byte> copy(bytes.begin(), bytes.end());
+-            bytes_.insert(bytes_.end(), copy.begin(), copy.end());
+-        } else {
+-            bytes_.insert(bytes_.end(), bytes.begin(), bytes.end());
+-        }
++        // Snapshot also defines self-append when bytes aliases this buffer.
++        std::vector<std::byte> copy(bytes.begin(), bytes.end());
++        bytes_.insert(bytes_.end(), copy.begin(), copy.end());
+     }
+     void push(std::byte byte) {
+         bytes_.push_back(byte);
+--- a/include/chronicle/schema.hpp
++++ b/include/chronicle/schema.hpp
+@@ -52,22 +52,6 @@
+     std::vector<FieldRecord> fields;
+     std::size_t offset = 0;
+ };
+-// Views borrow the reader input; invalidated when its owner dies or mutates.
+-// deserialize() uses them only during parsing and returns owned records.
+-struct FieldView {
+-    FieldId id;
+-    WireType wire;
+-    std::span<const std::byte> payload;
+-    std::size_t offset = 0;
+-};
+-struct ObjectView {
+-    TypeId type;
+-    std::uint16_t version;
+-    std::vector<FieldView> fields;
+-    std::size_t offset = 0;
+-};
+-ObjectView decodeObjectView(BinaryReader& reader);
+-ObjectRecord ownObject(const ObjectView& object);
+ ByteBuffer encodeObject(ObjectRecord object);
+ ObjectRecord decodeObject(BinaryReader& reader);
+ } // namespace chronicle
+--- a/src/binary.cpp
++++ b/src/binary.cpp
+@@ -1,5 +1,4 @@
+ #include "chronicle/binary_reader.hpp"
+-#include <array>
+ #include <bit>
+ #include <limits>
+ #include <type_traits>
+@@ -48,13 +47,6 @@
+     }
+     return true;
+ }
+-void BinaryWriter::reserve(std::size_t capacity) {
+-    if (capacity > maxFileBytes) {
+-        fail(ErrorCode::limit_exceeded, buffer_.size(), "writer",
+-             "file size limit exceeded");
+-    }
+-    buffer_.reserve(capacity);
+-}
+ void BinaryWriter::writeBytes(std::span<const std::byte> bytes) {
+     if (bytes.size() > maxFileBytes - buffer_.size()) {
+         fail(ErrorCode::limit_exceeded, buffer_.size(), "writer",
+@@ -62,26 +54,24 @@
+     }
+     buffer_.append(bytes);
+ }
+-namespace {
+-template <typename T> void writeUnsigned(BinaryWriter& writer, T value) {
+-    std::array<std::byte, sizeof(T)> bytes{};
+-    for (std::size_t i = 0; i < bytes.size(); ++i) {
+-        bytes[i] = std::byte(static_cast<std::uint8_t>(value >> (i * 8U)));
+-    }
+-    writer.writeBytes(bytes);
+-}
+-} // namespace
+ void BinaryWriter::writeU8(std::uint8_t value) {
+-    writeUnsigned(*this, value);
++    const std::byte byte{value};
++    writeBytes({&byte, 1});
+ }
+ void BinaryWriter::writeU16(std::uint16_t value) {
+-    writeUnsigned(*this, value);
++    for (unsigned i = 0; i < 2; ++i) {
++        writeU8(static_cast<std::uint8_t>(value >> (i * 8U)));
++    }
+ }
+ void BinaryWriter::writeU32(std::uint32_t value) {
+-    writeUnsigned(*this, value);
++    for (unsigned i = 0; i < 4; ++i) {
++        writeU8(static_cast<std::uint8_t>(value >> (i * 8U)));
++    }
+ }
+ void BinaryWriter::writeU64(std::uint64_t value) {
+-    writeUnsigned(*this, value);
++    for (unsigned i = 0; i < 8; ++i) {
++        writeU8(static_cast<std::uint8_t>(value >> (i * 8U)));
++    }
+ }
+ void BinaryWriter::writeI32(std::int32_t value) {
+     writeU32(std::bit_cast<std::uint32_t>(value));
+--- a/src/file.cpp
++++ b/src/file.cpp
+@@ -37,7 +37,9 @@
+     if (!stream || stream.peek() != std::char_traits<char>::eof()) {
+         return ioError(path, "file changed or failed during read");
+     }
+-    return ByteBuffer(std::move(bytes));
++    ByteBuffer buffer;
++    buffer.append(bytes);
++    return buffer;
+ }
+ Status writeFile(const std::filesystem::path& path,
+                  std::span<const std::byte> bytes, bool replace) {
+--- a/src/schema.cpp
++++ b/src/schema.cpp
+@@ -1,5 +1,4 @@
+ #include "chronicle/schema.hpp"
+-#include <array>
+ #include <limits>
+ #include <set>
+ namespace chronicle {
+@@ -89,17 +88,7 @@
+     }
+     std::sort(object.fields.begin(), object.fields.end(),
+               [](const auto& a, const auto& b) { return a.id < b.id; });
+-    std::size_t total = 8;
+-    for (const auto& field : object.fields) {
+-        if (total > maxFileBytes - 16 ||
+-            field.payload.size() > maxFileBytes - total - 16) {
+-            fail(ErrorCode::limit_exceeded, 0, "object",
+-                 "object size limit exceeded");
+-        }
+-        total += 16 + field.payload.size();
+-    }
+     BinaryWriter writer;
+-    writer.reserve(total);
+     writer.writeU32(object.type);
+     writer.writeU16(object.version);
+     writer.writeU16(static_cast<std::uint16_t>(object.fields.size()));
+@@ -119,9 +108,9 @@
+     }
+     return std::move(writer).take();
+ }
+-ObjectView decodeObjectView(BinaryReader& reader) {
++ObjectRecord decodeObject(BinaryReader& reader) {
+     const auto offset = reader.offset();
+-    ObjectView object{reader.readU32(), reader.readU16(), {}, offset};
++    ObjectRecord object{reader.readU32(), reader.readU16(), {}, offset};
+     const auto count = reader.readU16();
+     if (!object.type || !object.version) {
+         fail(ErrorCode::invalid_format, offset, "object",
+@@ -135,8 +124,7 @@
+         fail(ErrorCode::truncated, reader.offset(), "object",
+              "field headers do not fit input");
+     }
+-    object.fields.reserve(count);
+-    std::array<FieldId, 1024> seen;
++    std::set<FieldId> seen;
+     for (std::uint16_t i = 0; i < count; ++i) {
+         const auto headerOffset = reader.offset();
+         const auto id = reader.readU32();
+@@ -146,13 +134,10 @@
+         const auto size = reader.readU64();
+         const std::string context = "type " + std::to_string(object.type) +
+                                     ".field " + std::to_string(id);
+-        const auto seenEnd = seen.begin() + i;
+-        if (!id || std::find(seen.begin(), seenEnd, id) != seenEnd || flags ||
+-            reserved) {
++        if (!id || !seen.insert(id).second || flags || reserved) {
+             fail(ErrorCode::invalid_format, headerOffset, context,
+                  "invalid field header or duplicate ID");
+         }
+-        seen[i] = id;
+         if (size > maxFileBytes) {
+             fail(ErrorCode::limit_exceeded, headerOffset + 8, context,
+                  "field size limit exceeded");
+@@ -161,25 +146,11 @@
+             fail(ErrorCode::truncated, reader.offset(), context,
+                  "field payload exceeds remaining input");
+         }
+-        const auto payloadOffset = reader.offset();
+-        object.fields.push_back(
+-            {id, static_cast<WireType>(wire),
+-             reader.readBytes(static_cast<std::size_t>(size)), payloadOffset});
++        FieldRecord field{id, static_cast<WireType>(wire), {}, reader.offset()};
++        field.payload.append(reader.readBytes(static_cast<std::size_t>(size)));
++        object.fields.push_back(std::move(field));
+     }
+     reader.requireEnd();
+     return object;
+ }
+-ObjectRecord ownObject(const ObjectView& view) {
+-    ObjectRecord object{view.type, view.version, {}, view.offset};
+-    object.fields.reserve(view.fields.size());
+-    for (const auto& field : view.fields) {
+-        FieldRecord owned{field.id, field.wire, {}, field.offset};
+-        owned.payload.append(field.payload);
+-        object.fields.push_back(std::move(owned));
+-    }
+-    return object;
+-}
+-ObjectRecord decodeObject(BinaryReader& reader) {
+-    return ownObject(decodeObjectView(reader));
+-}
+ } // namespace chronicle
+--- a/src/serialization.cpp
++++ b/src/serialization.cpp
+@@ -80,7 +80,7 @@
+     }));
+     return object;
+ }
+-const TypeSchema& checkObject(const ObjectView& object, TypeId expected) {
++const TypeSchema& checkObject(const ObjectRecord& object, TypeId expected) {
+     if (object.type != expected) {
+         fail(ErrorCode::invalid_format, object.offset, "object",
+              "unexpected type ID");
+@@ -102,11 +102,12 @@
+     }
+     return *schema;
+ }
+-BinaryReader fieldReader(const FieldView& fieldRecord,
++BinaryReader fieldReader(const FieldRecord& fieldRecord,
+                          const std::string& context) {
+-    return BinaryReader(fieldRecord.payload, fieldRecord.offset, context);
+-}
+-Vec3 decodePosition(const ObjectView& object) {
++    return BinaryReader(fieldRecord.payload.view(), fieldRecord.offset,
++                        context);
++}
++Vec3 decodePosition(const ObjectRecord& object) {
+     checkObject(object, vec3Type);
+     Vec3 position;
+     for (const auto& member : object.fields) {
+@@ -128,7 +129,7 @@
+     }
+     return position;
+ }
+-Item decodeItem(const ObjectView& object) {
++Item decodeItem(const ObjectRecord& object) {
+     checkObject(object, itemType);
+     Item item;
+     for (const auto& member : object.fields) {
+@@ -147,7 +148,7 @@
+     }
+     return item;
+ }
+-Player decodePlayer(const ObjectView& object) {
++Player decodePlayer(const ObjectRecord& object) {
+     checkObject(object, playerType);
+     Player player;
+     for (const auto& member : object.fields) {
+@@ -169,7 +170,7 @@
+                                 : reader.readI64();
+             break;
+         case 4:
+-            player.position = decodePosition(decodeObjectView(reader));
++            player.position = decodePosition(decodeObject(reader));
+             break;
+         case 5: {
+             const auto count = reader.readU32();
+@@ -196,7 +197,7 @@
+                                         "Player.inventory[" +
+                                             std::to_string(i) + "]");
+                 player.inventory.push_back(
+-                    decodeItem(decodeObjectView(itemReader)));
++                    decodeItem(decodeObject(itemReader)));
+             }
+             break;
+         }
+@@ -224,7 +225,6 @@
+             0};
+         auto payload = encodeObject(std::move(root));
+         BinaryWriter writer;
+-        writer.reserve(24 + payload.size());
+         writer.writeBytes(magic);
+         writer.writeU16(1);
+         writer.writeU16(0);
+@@ -275,10 +275,10 @@
+         }
+         BinaryReader rootReader(
+             reader.readBytes(static_cast<std::size_t>(size)), 24, "Scene");
+-        auto root = decodeObjectView(rootReader);
++        auto root = decodeObject(rootReader);
+         checkObject(root, sceneType);
+-        LoadedScene loaded{{}, 2, {sceneType, 1, {}, root.offset}};
+-        for (const auto& member : root.fields) {
++        LoadedScene loaded{{}, 2, std::move(root)};
++        for (const auto& member : loaded.root.fields) {
+             auto fieldInput =
+                 fieldReader(member, "Scene." + std::to_string(member.id));
+             switch (member.id) {
+@@ -286,7 +286,7 @@
+                 loaded.scene.name = fieldInput.readString();
+                 break;
+             case 2: {
+-                auto player = decodeObjectView(fieldInput);
++                auto player = decodeObject(fieldInput);
+                 loaded.playerVersion = player.version;
+                 loaded.scene.player = decodePlayer(player);
+                 break;
+@@ -296,7 +296,6 @@
+             }
+             fieldInput.requireEnd();
+         }
+-        loaded.root = ownObject(root);
+         return loaded;
+     } catch (const Failure& failure) {
+         return failure.error();
+--- a/tools/cli/output.cpp
++++ b/tools/cli/output.cpp
+@@ -20,7 +20,7 @@
+                 {"z", scene.player.position.z}}},
+               {"inventory", items}}}};
+ }
+-void inspectObject(std::ostringstream& out, const ObjectView& object,
++void inspectObject(std::ostringstream& out, const ObjectRecord& object,
+                    unsigned indent) {
+     const std::string pad(indent, ' ');
+     const auto* schema = builtinSchemas().find(object.type, object.version);
+@@ -45,9 +45,9 @@
+         if (!known) {
+             continue;
+         }
+-        BinaryReader reader(member.payload, member.offset, "inspect");
++        BinaryReader reader(member.payload.view(), member.offset, "inspect");
+         if (member.wire == WireType::object) {
+-            inspectObject(out, decodeObjectView(reader), indent + 4);
++            inspectObject(out, decodeObject(reader), indent + 4);
+         }
+         if (member.wire == WireType::array) {
+             const auto count = reader.readU32();
+@@ -57,7 +57,7 @@
+                 BinaryReader nested(
+                     reader.readBytes(static_cast<std::size_t>(size)), offset,
+                     "inspect.item");
+-                inspectObject(out, decodeObjectView(nested), indent + 4);
++                inspectObject(out, decodeObject(nested), indent + 4);
+             }
+         }
+     }
+@@ -92,13 +92,7 @@
+ std::string inspect(const LoadedScene& scene) {
+     std::ostringstream out;
+     out << "Chronicle Lite format=1 root=Scene\n";
+-    ObjectView root{scene.root.type, scene.root.version, {}, scene.root.offset};
+-    root.fields.reserve(scene.root.fields.size());
+-    for (const auto& field : scene.root.fields) {
+-        root.fields.push_back(
+-            {field.id, field.wire, field.payload.view(), field.offset});
+-    }
+-    inspectObject(out, root, 0);
++    inspectObject(out, scene.root, 0);
+     return out.str();
+ }
+ std::string diff(const LoadedScene& before, const LoadedScene& after) {

@@ -1,0 +1,472 @@
+{
+  "date": "2026-10-12",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "demo_directory": "build/demo/run.rb0fkauh",
+  "source_sha256": "2b5fd2bb0039139c28a42bd66ca1488547477b7bd965f1a4617a991609cca92c",
+  "groups": [
+    {
+      "slug": "01-build",
+      "title": "01 / Build and test",
+      "records": [
+        {
+          "argv": [
+            "cmake",
+            "--preset",
+            "debug"
+          ],
+          "command": "cmake --preset debug",
+          "exit_code": 0,
+          "output": "-- Using the multi-header code from <project>/build/debug/_deps/json-src/include/\n-- Configuring done (0.2s)\n-- Generating done (0.0s)\n-- Build files have been written to: <project>/build/debug\n",
+          "summary": true
+        },
+        {
+          "argv": [
+            "cmake",
+            "--build",
+            "--preset",
+            "debug",
+            "--parallel",
+            "2"
+          ],
+          "command": "cmake --build --preset debug --parallel 2",
+          "exit_code": 0,
+          "output": "ninja: no work to do.\n",
+          "summary": true
+        },
+        {
+          "argv": [
+            "ctest",
+            "--preset",
+            "debug"
+          ],
+          "command": "ctest --preset debug",
+          "exit_code": 0,
+          "output": "Test project <project>/build/debug\n      Start  1: Result.MoveOnlyValueAndError\n 1/37 Test  #1: Result.MoveOnlyValueAndError ....................................   Passed    0.01 sec\n      Start  2: ByteBuffer.EmptyAndSelfAppend\n 2/37 Test  #2: ByteBuffer.EmptyAndSelfAppend ...................................   Passed    0.01 sec\n      Start  3: Binary.KnownLittleEndianBytes\n 3/37 Test  #3: Binary.KnownLittleEndianBytes ...................................   Passed    0.01 sec\n      Start  4: Binary.ExtremesAndSignedFloats\n 4/37 Test  #4: Binary.ExtremesAndSignedFloats ..................................   Passed    0.01 sec\n      Start  5: Binary.StringsUtf8AndEmbeddedNull\n 5/37 Test  #5: Binary.StringsUtf8AndEmbeddedNull ...............................   Passed    0.01 sec\n      Start  6: Binary.BoundsOverflowAndFailureDoesNotAdvance\n 6/37 Test  #6: Binary.BoundsOverflowAndFailureDoesNotAdvance ...................   Passed    0.01 sec\n      Start  7: Binary.StringLimitsAndTrailingBytes\n 7/37 Test  #7: Binary.StringLimitsAndTrailingBytes .............................   Passed    0.01 sec\n      Start  8: Scene.DeterministicRoundTripAndGoldenV2\n 8/37 Test  #8: Scene.DeterministicRoundTripAndGoldenV2 .........................   Passed    0.01 sec\n      Start  9: Scene.EmptyAndLargeIntegersRoundTrip\n 9/37 Test  #9: Scene.EmptyAndLargeIntegersRoundTrip ............................   Passed    0.01 sec\n      Start 10: Scene.RejectNonFiniteOverflowAndUnsupportedVersions\n10/37 Test #10: Scene.RejectNonFiniteOverflowAndUnsupportedVersions .............   Passed    0.01 sec\n      Start 11: Compatibility.GoldenV1WideningAndDefaultName\n11/37 Test #11: Compatibility.GoldenV1WideningAndDefaultName ....................   Passed    0.01 sec\n      Start 12: Compatibility.MissingFieldsUseDefaults\n12/37 Test #12: Compatibility.MissingFieldsUseDefaults ..........................   Passed    0.01 sec\n      Start 13: Compatibility.UnknownFieldsAndWireTypesAreSkipped\n13/37 Test #13: Compatibility.UnknownFieldsAndWireTypesAreSkipped ...............   Passed    0.01 sec\n      Start 14: Schema.RegistrationValidationAndCanonicalOrder\n14/37 Test #14: Schema.RegistrationValidationAndCanonicalOrder ..................   Passed    0.01 sec\n      Start 15: Malformed.EveryTruncationIsRejected\n15/37 Test #15: Malformed.EveryTruncationIsRejected .............................   Passed    0.01 sec\n      Start 16: Malformed.HeaderVersionsLengthsAndTrailingBytes\n16/37 Test #16: Malformed.HeaderVersionsLengthsAndTrailingBytes .................   Passed    0.01 sec\n      Start 17: Malformed.FieldWireDuplicateFlagsAndSchemaVersions\n17/37 Test #17: Malformed.FieldWireDuplicateFlagsAndSchemaVersions ..............   Passed    0.01 sec\n      Start 18: Malformed.StringsArraysAndScalarPayloadLengths\n18/37 Test #18: Malformed.StringsArraysAndScalarPayloadLengths ..................   Passed    0.01 sec\n      Start 19: Malformed.SeededMutationSmoke\n19/37 Test #19: Malformed.SeededMutationSmoke ...................................   Passed    0.06 sec\n      Start 20: Malformed.NestedInvalidLengthsUtf8AndNaN\n20/37 Test #20: Malformed.NestedInvalidLengthsUtf8AndNaN ........................   Passed    0.01 sec\n      Start 21: File.SaveLoadAndAtomicReplacement\n21/37 Test #21: File.SaveLoadAndAtomicReplacement ...............................   Passed    0.01 sec\n      Start 22: File.MissingAndOversizedFiles\n22/37 Test #22: File.MissingAndOversizedFiles ...................................   Passed    0.01 sec\n      Start 23: Migration.V1ToV2SourcePreservedAndValidated\n23/37 Test #23: Migration.V1ToV2SourcePreservedAndValidated .....................   Passed    0.01 sec\n      Start 24: Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles\n24/37 Test #24: Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles ...   Passed    0.01 sec\n      Start 25: Migration.AliasedDestinationIsRejected\n25/37 Test #25: Migration.AliasedDestinationIsRejected ..........................   Passed    0.01 sec\n      Start 26: Migration.InvalidSceneCannotReplaceValidSave\n26/37 Test #26: Migration.InvalidSceneCannotReplaceValidSave ....................   Passed    0.01 sec\n      Start 27: Cli.HelpUsageAndVersion\n27/37 Test #27: Cli.HelpUsageAndVersion .........................................   Passed    0.01 sec\n      Start 28: Cli.ValidateAndInspect\n28/37 Test #28: Cli.ValidateAndInspect ..........................................   Passed    0.01 sec\n      Start 29: Cli.JsonIsValidAndPreservesStringsAndIntegers\n29/37 Test #29: Cli.JsonIsValidAndPreservesStringsAndIntegers ...................   Passed    0.01 sec\n      Start 30: Cli.SemanticDiffIncludesHealthInventoryAndSchema\n30/37 Test #30: Cli.SemanticDiffIncludesHealthInventoryAndSchema ................   Passed    0.01 sec\n      Start 31: Cli.CompleteMigrationWorkflow\n31/37 Test #31: Cli.CompleteMigrationWorkflow ...................................   Passed    0.01 sec\n      Start 32: Cli.ErrorCodesAndOffsetContext\n32/37 Test #32: Cli.ErrorCodesAndOffsetContext ..................................   Passed    0.01 sec\n      Start 33: cli_validate_v1\n33/37 Test #33: cli_validate_v1 .................................................   Passed    0.00 sec\n      Start 34: cli_validate_v2\n34/37 Test #34: cli_validate_v2 .................................................   Passed    0.00 sec\n      Start 35: demo_save\n35/37 Test #35: demo_save .......................................................   Passed    0.00 sec\n      Start 36: demo_load\n36/37 Test #36: demo_load .......................................................   Passed    0.00 sec\n      Start 37: cli_workflow\n37/37 Test #37: cli_workflow ....................................................   Passed    0.02 sec\n\n100% tests passed out of 37\n\nTotal Test time (real) =   0.28 sec\n",
+          "summary": true
+        }
+      ]
+    },
+    {
+      "slug": "02-save-load",
+      "title": "02 / Save, reload, reproduce",
+      "records": [
+        {
+          "argv": [
+            "./build/debug/scene_demo",
+            "save",
+            "build/demo/run.rb0fkauh/scene_v1.bin",
+            "1"
+          ],
+          "command": "./build/debug/scene_demo save \"$DEMO_DIR\"/scene_v1.bin 1",
+          "exit_code": 0,
+          "output": "Saved Player V1\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/scene_demo",
+            "save",
+            "build/demo/run.rb0fkauh/scene_v2.bin",
+            "2"
+          ],
+          "command": "./build/debug/scene_demo save \"$DEMO_DIR\"/scene_v2.bin 2",
+          "exit_code": 0,
+          "output": "Saved Player V2\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/scene_demo",
+            "load",
+            "build/demo/run.rb0fkauh/scene_v1.bin"
+          ],
+          "command": "./build/debug/scene_demo load \"$DEMO_DIR\"/scene_v1.bin",
+          "exit_code": 0,
+          "output": "Meadow: Unknown, health=100, inventory=2\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/scene_demo",
+            "load",
+            "build/demo/run.rb0fkauh/scene_v2.bin"
+          ],
+          "command": "./build/debug/scene_demo load \"$DEMO_DIR\"/scene_v2.bin",
+          "exit_code": 0,
+          "output": "Meadow: Ada, health=100, inventory=2\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/scene_demo",
+            "save",
+            "build/demo/run.rb0fkauh/scene_v2_repeat.bin",
+            "2"
+          ],
+          "command": "./build/debug/scene_demo save \"$DEMO_DIR\"/scene_v2_repeat.bin 2",
+          "exit_code": 0,
+          "output": "Saved Player V2\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "cmp",
+            "build/demo/run.rb0fkauh/scene_v2.bin",
+            "build/demo/run.rb0fkauh/scene_v2_repeat.bin"
+          ],
+          "command": "cmp \"$DEMO_DIR\"/scene_v2.bin \"$DEMO_DIR\"/scene_v2_repeat.bin",
+          "exit_code": 0,
+          "output": "",
+          "summary": false
+        }
+      ]
+    },
+    {
+      "slug": "03-inspect",
+      "title": "03 / Inspect and validate",
+      "records": [
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "inspect",
+            "build/demo/run.rb0fkauh/scene_v1.bin"
+          ],
+          "command": "./build/debug/chronicle inspect \"$DEMO_DIR\"/scene_v1.bin",
+          "exit_code": 0,
+          "output": "Chronicle Lite format=1 root=Scene\nScene type=1 schema=1 offset=0x18\n  name id=1 wire=5 size=10 offset=0x30\n  player id=2 wire=6 size=287 offset=0x4a\n    Player type=2 schema=1 offset=0x4a\n      id id=1 wire=1 size=8 offset=0x62\n      health id=3 wire=2 size=4 offset=0x7a\n      position id=4 wire=6 size=68 offset=0x8e\n        Vec3 type=3 schema=1 offset=0x8e\n          x id=1 wire=4 size=4 offset=0xa6\n          y id=2 wire=4 size=4 offset=0xba\n          z id=3 wire=4 size=4 offset=0xce\n      inventory id=5 wire=7 size=135 offset=0xe2\n        Item type=4 schema=1 offset=0xee\n          id id=1 wire=1 size=8 offset=0x106\n          name id=2 wire=5 size=9 offset=0x11e\n        Item type=4 schema=1 offset=0x12f\n          id id=1 wire=1 size=8 offset=0x147\n          name id=2 wire=5 size=10 offset=0x15f\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "validate",
+            "build/demo/run.rb0fkauh/scene_v1.bin"
+          ],
+          "command": "./build/debug/chronicle validate \"$DEMO_DIR\"/scene_v1.bin",
+          "exit_code": 0,
+          "output": "Valid: format=1 Player V1\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "validate",
+            "build/demo/run.rb0fkauh/scene_v2.bin"
+          ],
+          "command": "./build/debug/chronicle validate \"$DEMO_DIR\"/scene_v2.bin",
+          "exit_code": 0,
+          "output": "Valid: format=1 Player V2\n",
+          "summary": false
+        }
+      ]
+    },
+    {
+      "slug": "04-migrate",
+      "title": "04 / Migrate V1 to V2",
+      "records": [
+        {
+          "argv": [
+            "shasum",
+            "-a",
+            "256",
+            "build/demo/run.rb0fkauh/scene_v1.bin"
+          ],
+          "command": "shasum -a 256 \"$DEMO_DIR\"/scene_v1.bin",
+          "exit_code": 0,
+          "output": "2b5fd2bb0039139c28a42bd66ca1488547477b7bd965f1a4617a991609cca92c  $DEMO_DIR/scene_v1.bin\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "migrate",
+            "build/demo/run.rb0fkauh/scene_v1.bin",
+            "build/demo/run.rb0fkauh/scene_migrated.bin"
+          ],
+          "command": "./build/debug/chronicle migrate \"$DEMO_DIR\"/scene_v1.bin \"$DEMO_DIR\"/scene_migrated.bin",
+          "exit_code": 0,
+          "output": "Migrated Player V1 -> V2: $DEMO_DIR/scene_migrated.bin\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "validate",
+            "build/demo/run.rb0fkauh/scene_migrated.bin"
+          ],
+          "command": "./build/debug/chronicle validate \"$DEMO_DIR\"/scene_migrated.bin",
+          "exit_code": 0,
+          "output": "Valid: format=1 Player V2\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/scene_demo",
+            "load",
+            "build/demo/run.rb0fkauh/scene_migrated.bin"
+          ],
+          "command": "./build/debug/scene_demo load \"$DEMO_DIR\"/scene_migrated.bin",
+          "exit_code": 0,
+          "output": "Meadow: Unknown, health=100, inventory=2\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "shasum",
+            "-a",
+            "256",
+            "build/demo/run.rb0fkauh/scene_v1.bin"
+          ],
+          "command": "shasum -a 256 \"$DEMO_DIR\"/scene_v1.bin",
+          "exit_code": 0,
+          "output": "2b5fd2bb0039139c28a42bd66ca1488547477b7bd965f1a4617a991609cca92c  $DEMO_DIR/scene_v1.bin\n",
+          "summary": false
+        }
+      ]
+    },
+    {
+      "slug": "05-diff",
+      "title": "05 / Compare semantic changes",
+      "records": [
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "diff",
+            "build/demo/run.rb0fkauh/scene_v1.bin",
+            "build/demo/run.rb0fkauh/scene_migrated.bin"
+          ],
+          "command": "./build/debug/chronicle diff \"$DEMO_DIR\"/scene_v1.bin \"$DEMO_DIR\"/scene_migrated.bin",
+          "exit_code": 1,
+          "output": "player.schema: 1 -> 2\nplayer.name: field added, default = \"Unknown\"\nplayer.health: int32 -> int64\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "diff",
+            "build/demo/run.rb0fkauh/scene_migrated.bin",
+            "build/demo/run.rb0fkauh/scene_v2.bin"
+          ],
+          "command": "./build/debug/chronicle diff \"$DEMO_DIR\"/scene_migrated.bin \"$DEMO_DIR\"/scene_v2.bin",
+          "exit_code": 1,
+          "output": "player.name: \"Unknown\" -> \"Ada\"\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "diff",
+            "build/demo/run.rb0fkauh/scene_v2.bin",
+            "build/demo/run.rb0fkauh/scene_v2_repeat.bin"
+          ],
+          "command": "./build/debug/chronicle diff \"$DEMO_DIR\"/scene_v2.bin \"$DEMO_DIR\"/scene_v2_repeat.bin",
+          "exit_code": 0,
+          "output": "No semantic differences\n",
+          "summary": false
+        }
+      ]
+    },
+    {
+      "slug": "06-json",
+      "title": "06 / Export JSON",
+      "records": [
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "to-json",
+            "build/demo/run.rb0fkauh/scene_migrated.bin"
+          ],
+          "command": "./build/debug/chronicle to-json \"$DEMO_DIR\"/scene_migrated.bin",
+          "exit_code": 0,
+          "output": "{\n  \"name\": \"Meadow\",\n  \"player\": {\n    \"id\": 42,\n    \"name\": \"Unknown\",\n    \"health\": 100,\n    \"position\": {\n      \"x\": 1.5,\n      \"y\": -2.0,\n      \"z\": 3.25\n    },\n    \"inventory\": [\n      {\n        \"id\": 7,\n        \"name\": \"Sword\"\n      },\n      {\n        \"id\": 8,\n        \"name\": \"Potion\"\n      }\n    ]\n  }\n}\n",
+          "summary": false
+        }
+      ]
+    },
+    {
+      "slug": "07-errors",
+      "title": "07 / Reject unsafe input",
+      "records": [
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "validate",
+            "tests/golden/bad_magic.bin"
+          ],
+          "command": "./build/debug/chronicle validate tests/golden/bad_magic.bin",
+          "exit_code": 2,
+          "output": "header.magic at offset 0x0: expected CHRNLITE\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "validate",
+            "tests/golden/truncated.bin"
+          ],
+          "command": "./build/debug/chronicle validate tests/golden/truncated.bin",
+          "exit_code": 2,
+          "output": "header.payload at offset 0x18: payload exceeds remaining input\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "validate",
+            "build/demo/run.rb0fkauh/missing.bin"
+          ],
+          "command": "./build/debug/chronicle validate \"$DEMO_DIR\"/missing.bin",
+          "exit_code": 3,
+          "output": "$DEMO_DIR/missing.bin at offset 0x0: cannot open file for reading\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "validate",
+            "build/demo/run.rb0fkauh/unsupported.bin"
+          ],
+          "command": "./build/debug/chronicle validate \"$DEMO_DIR\"/unsupported.bin",
+          "exit_code": 4,
+          "output": "header.version at offset 0x8: unsupported file format version\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "migrate",
+            "build/demo/run.rb0fkauh/scene_v1.bin",
+            "build/demo/run.rb0fkauh/scene_migrated.bin"
+          ],
+          "command": "./build/debug/chronicle migrate \"$DEMO_DIR\"/scene_v1.bin \"$DEMO_DIR\"/scene_migrated.bin",
+          "exit_code": 3,
+          "output": "$DEMO_DIR/scene_migrated.bin at offset 0x0: cannot install completed file: File exists\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/debug/chronicle",
+            "validate",
+            "build/demo/run.rb0fkauh/scene_migrated.bin"
+          ],
+          "command": "./build/debug/chronicle validate \"$DEMO_DIR\"/scene_migrated.bin",
+          "exit_code": 0,
+          "output": "Valid: format=1 Player V2\n",
+          "summary": false
+        }
+      ]
+    },
+    {
+      "slug": "08-verification",
+      "title": "08 / Verify release and sanitizers",
+      "records": [
+        {
+          "argv": [
+            "cmake",
+            "--preset",
+            "release"
+          ],
+          "command": "cmake --preset release",
+          "exit_code": 0,
+          "output": "-- Using the multi-header code from <project>/build/release/_deps/json-src/include/\n-- Configuring done (0.2s)\n-- Generating done (0.0s)\n-- Build files have been written to: <project>/build/release\n",
+          "summary": true
+        },
+        {
+          "argv": [
+            "cmake",
+            "--build",
+            "--preset",
+            "release",
+            "--parallel",
+            "2"
+          ],
+          "command": "cmake --build --preset release --parallel 2",
+          "exit_code": 0,
+          "output": "ninja: no work to do.\n",
+          "summary": true
+        },
+        {
+          "argv": [
+            "ctest",
+            "--preset",
+            "release"
+          ],
+          "command": "ctest --preset release",
+          "exit_code": 0,
+          "output": "Test project <project>/build/release\n      Start  1: Result.MoveOnlyValueAndError\n 1/37 Test  #1: Result.MoveOnlyValueAndError ....................................   Passed    0.00 sec\n      Start  2: ByteBuffer.EmptyAndSelfAppend\n 2/37 Test  #2: ByteBuffer.EmptyAndSelfAppend ...................................   Passed    0.00 sec\n      Start  3: Binary.KnownLittleEndianBytes\n 3/37 Test  #3: Binary.KnownLittleEndianBytes ...................................   Passed    0.00 sec\n      Start  4: Binary.ExtremesAndSignedFloats\n 4/37 Test  #4: Binary.ExtremesAndSignedFloats ..................................   Passed    0.00 sec\n      Start  5: Binary.StringsUtf8AndEmbeddedNull\n 5/37 Test  #5: Binary.StringsUtf8AndEmbeddedNull ...............................   Passed    0.00 sec\n      Start  6: Binary.BoundsOverflowAndFailureDoesNotAdvance\n 6/37 Test  #6: Binary.BoundsOverflowAndFailureDoesNotAdvance ...................   Passed    0.00 sec\n      Start  7: Binary.StringLimitsAndTrailingBytes\n 7/37 Test  #7: Binary.StringLimitsAndTrailingBytes .............................   Passed    0.00 sec\n      Start  8: Scene.DeterministicRoundTripAndGoldenV2\n 8/37 Test  #8: Scene.DeterministicRoundTripAndGoldenV2 .........................   Passed    0.00 sec\n      Start  9: Scene.EmptyAndLargeIntegersRoundTrip\n 9/37 Test  #9: Scene.EmptyAndLargeIntegersRoundTrip ............................   Passed    0.00 sec\n      Start 10: Scene.RejectNonFiniteOverflowAndUnsupportedVersions\n10/37 Test #10: Scene.RejectNonFiniteOverflowAndUnsupportedVersions .............   Passed    0.00 sec\n      Start 11: Compatibility.GoldenV1WideningAndDefaultName\n11/37 Test #11: Compatibility.GoldenV1WideningAndDefaultName ....................   Passed    0.00 sec\n      Start 12: Compatibility.MissingFieldsUseDefaults\n12/37 Test #12: Compatibility.MissingFieldsUseDefaults ..........................   Passed    0.00 sec\n      Start 13: Compatibility.UnknownFieldsAndWireTypesAreSkipped\n13/37 Test #13: Compatibility.UnknownFieldsAndWireTypesAreSkipped ...............   Passed    0.00 sec\n      Start 14: Schema.RegistrationValidationAndCanonicalOrder\n14/37 Test #14: Schema.RegistrationValidationAndCanonicalOrder ..................   Passed    0.00 sec\n      Start 15: Malformed.EveryTruncationIsRejected\n15/37 Test #15: Malformed.EveryTruncationIsRejected .............................   Passed    0.00 sec\n      Start 16: Malformed.HeaderVersionsLengthsAndTrailingBytes\n16/37 Test #16: Malformed.HeaderVersionsLengthsAndTrailingBytes .................   Passed    0.00 sec\n      Start 17: Malformed.FieldWireDuplicateFlagsAndSchemaVersions\n17/37 Test #17: Malformed.FieldWireDuplicateFlagsAndSchemaVersions ..............   Passed    0.00 sec\n      Start 18: Malformed.StringsArraysAndScalarPayloadLengths\n18/37 Test #18: Malformed.StringsArraysAndScalarPayloadLengths ..................   Passed    0.00 sec\n      Start 19: Malformed.SeededMutationSmoke\n19/37 Test #19: Malformed.SeededMutationSmoke ...................................   Passed    0.01 sec\n      Start 20: Malformed.NestedInvalidLengthsUtf8AndNaN\n20/37 Test #20: Malformed.NestedInvalidLengthsUtf8AndNaN ........................   Passed    0.00 sec\n      Start 21: File.SaveLoadAndAtomicReplacement\n21/37 Test #21: File.SaveLoadAndAtomicReplacement ...............................   Passed    0.00 sec\n      Start 22: File.MissingAndOversizedFiles\n22/37 Test #22: File.MissingAndOversizedFiles ...................................   Passed    0.00 sec\n      Start 23: Migration.V1ToV2SourcePreservedAndValidated\n23/37 Test #23: Migration.V1ToV2SourcePreservedAndValidated .....................   Passed    0.00 sec\n      Start 24: Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles\n24/37 Test #24: Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles ...   Passed    0.00 sec\n      Start 25: Migration.AliasedDestinationIsRejected\n25/37 Test #25: Migration.AliasedDestinationIsRejected ..........................   Passed    0.00 sec\n      Start 26: Migration.InvalidSceneCannotReplaceValidSave\n26/37 Test #26: Migration.InvalidSceneCannotReplaceValidSave ....................   Passed    0.00 sec\n      Start 27: Cli.HelpUsageAndVersion\n27/37 Test #27: Cli.HelpUsageAndVersion .........................................   Passed    0.00 sec\n      Start 28: Cli.ValidateAndInspect\n28/37 Test #28: Cli.ValidateAndInspect ..........................................   Passed    0.00 sec\n      Start 29: Cli.JsonIsValidAndPreservesStringsAndIntegers\n29/37 Test #29: Cli.JsonIsValidAndPreservesStringsAndIntegers ...................   Passed    0.00 sec\n      Start 30: Cli.SemanticDiffIncludesHealthInventoryAndSchema\n30/37 Test #30: Cli.SemanticDiffIncludesHealthInventoryAndSchema ................   Passed    0.00 sec\n      Start 31: Cli.CompleteMigrationWorkflow\n31/37 Test #31: Cli.CompleteMigrationWorkflow ...................................   Passed    0.00 sec\n      Start 32: Cli.ErrorCodesAndOffsetContext\n32/37 Test #32: Cli.ErrorCodesAndOffsetContext ..................................   Passed    0.00 sec\n      Start 33: cli_validate_v1\n33/37 Test #33: cli_validate_v1 .................................................   Passed    0.00 sec\n      Start 34: cli_validate_v2\n34/37 Test #34: cli_validate_v2 .................................................   Passed    0.00 sec\n      Start 35: demo_save\n35/37 Test #35: demo_save .......................................................   Passed    0.00 sec\n      Start 36: demo_load\n36/37 Test #36: demo_load .......................................................   Passed    0.00 sec\n      Start 37: cli_workflow\n37/37 Test #37: cli_workflow ....................................................   Passed    0.02 sec\n\n100% tests passed out of 37\n\nTotal Test time (real) =   0.10 sec\n",
+          "summary": true
+        },
+        {
+          "argv": [
+            "cmake",
+            "--preset",
+            "sanitizers"
+          ],
+          "command": "cmake --preset sanitizers",
+          "exit_code": 0,
+          "output": "-- Using the multi-header code from <project>/build/sanitizers/_deps/json-src/include/\n-- Configuring done (0.2s)\n-- Generating done (0.0s)\n-- Build files have been written to: <project>/build/sanitizers\n",
+          "summary": true
+        },
+        {
+          "argv": [
+            "cmake",
+            "--build",
+            "--preset",
+            "sanitizers",
+            "--parallel",
+            "2"
+          ],
+          "command": "cmake --build --preset sanitizers --parallel 2",
+          "exit_code": 0,
+          "output": "ninja: no work to do.\n",
+          "summary": true
+        },
+        {
+          "argv": [
+            "ctest",
+            "--preset",
+            "sanitizers"
+          ],
+          "command": "ctest --preset sanitizers",
+          "exit_code": 0,
+          "output": "Test project <project>/build/sanitizers\n      Start  1: Result.MoveOnlyValueAndError\n 1/37 Test  #1: Result.MoveOnlyValueAndError ....................................   Passed    0.01 sec\n      Start  2: ByteBuffer.EmptyAndSelfAppend\n 2/37 Test  #2: ByteBuffer.EmptyAndSelfAppend ...................................   Passed    0.02 sec\n      Start  3: Binary.KnownLittleEndianBytes\n 3/37 Test  #3: Binary.KnownLittleEndianBytes ...................................   Passed    0.01 sec\n      Start  4: Binary.ExtremesAndSignedFloats\n 4/37 Test  #4: Binary.ExtremesAndSignedFloats ..................................   Passed    0.02 sec\n      Start  5: Binary.StringsUtf8AndEmbeddedNull\n 5/37 Test  #5: Binary.StringsUtf8AndEmbeddedNull ...............................   Passed    0.01 sec\n      Start  6: Binary.BoundsOverflowAndFailureDoesNotAdvance\n 6/37 Test  #6: Binary.BoundsOverflowAndFailureDoesNotAdvance ...................   Passed    0.01 sec\n      Start  7: Binary.StringLimitsAndTrailingBytes\n 7/37 Test  #7: Binary.StringLimitsAndTrailingBytes .............................   Passed    0.01 sec\n      Start  8: Scene.DeterministicRoundTripAndGoldenV2\n 8/37 Test  #8: Scene.DeterministicRoundTripAndGoldenV2 .........................   Passed    0.02 sec\n      Start  9: Scene.EmptyAndLargeIntegersRoundTrip\n 9/37 Test  #9: Scene.EmptyAndLargeIntegersRoundTrip ............................   Passed    0.02 sec\n      Start 10: Scene.RejectNonFiniteOverflowAndUnsupportedVersions\n10/37 Test #10: Scene.RejectNonFiniteOverflowAndUnsupportedVersions .............   Passed    0.02 sec\n      Start 11: Compatibility.GoldenV1WideningAndDefaultName\n11/37 Test #11: Compatibility.GoldenV1WideningAndDefaultName ....................   Passed    0.02 sec\n      Start 12: Compatibility.MissingFieldsUseDefaults\n12/37 Test #12: Compatibility.MissingFieldsUseDefaults ..........................   Passed    0.02 sec\n      Start 13: Compatibility.UnknownFieldsAndWireTypesAreSkipped\n13/37 Test #13: Compatibility.UnknownFieldsAndWireTypesAreSkipped ...............   Passed    0.01 sec\n      Start 14: Schema.RegistrationValidationAndCanonicalOrder\n14/37 Test #14: Schema.RegistrationValidationAndCanonicalOrder ..................   Passed    0.01 sec\n      Start 15: Malformed.EveryTruncationIsRejected\n15/37 Test #15: Malformed.EveryTruncationIsRejected .............................   Passed    0.02 sec\n      Start 16: Malformed.HeaderVersionsLengthsAndTrailingBytes\n16/37 Test #16: Malformed.HeaderVersionsLengthsAndTrailingBytes .................   Passed    0.02 sec\n      Start 17: Malformed.FieldWireDuplicateFlagsAndSchemaVersions\n17/37 Test #17: Malformed.FieldWireDuplicateFlagsAndSchemaVersions ..............   Passed    0.02 sec\n      Start 18: Malformed.StringsArraysAndScalarPayloadLengths\n18/37 Test #18: Malformed.StringsArraysAndScalarPayloadLengths ..................   Passed    0.02 sec\n      Start 19: Malformed.SeededMutationSmoke\n19/37 Test #19: Malformed.SeededMutationSmoke ...................................   Passed    0.20 sec\n      Start 20: Malformed.NestedInvalidLengthsUtf8AndNaN\n20/37 Test #20: Malformed.NestedInvalidLengthsUtf8AndNaN ........................   Passed    0.02 sec\n      Start 21: File.SaveLoadAndAtomicReplacement\n21/37 Test #21: File.SaveLoadAndAtomicReplacement ...............................   Passed    0.02 sec\n      Start 22: File.MissingAndOversizedFiles\n22/37 Test #22: File.MissingAndOversizedFiles ...................................   Passed    0.01 sec\n      Start 23: Migration.V1ToV2SourcePreservedAndValidated\n23/37 Test #23: Migration.V1ToV2SourcePreservedAndValidated .....................   Passed    0.02 sec\n      Start 24: Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles\n24/37 Test #24: Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles ...   Passed    0.02 sec\n      Start 25: Migration.AliasedDestinationIsRejected\n25/37 Test #25: Migration.AliasedDestinationIsRejected ..........................   Passed    0.02 sec\n      Start 26: Migration.InvalidSceneCannotReplaceValidSave\n26/37 Test #26: Migration.InvalidSceneCannotReplaceValidSave ....................   Passed    0.02 sec\n      Start 27: Cli.HelpUsageAndVersion\n27/37 Test #27: Cli.HelpUsageAndVersion .........................................   Passed    0.01 sec\n      Start 28: Cli.ValidateAndInspect\n28/37 Test #28: Cli.ValidateAndInspect ..........................................   Passed    0.01 sec\n      Start 29: Cli.JsonIsValidAndPreservesStringsAndIntegers\n29/37 Test #29: Cli.JsonIsValidAndPreservesStringsAndIntegers ...................   Passed    0.01 sec\n      Start 30: Cli.SemanticDiffIncludesHealthInventoryAndSchema\n30/37 Test #30: Cli.SemanticDiffIncludesHealthInventoryAndSchema ................   Passed    0.02 sec\n      Start 31: Cli.CompleteMigrationWorkflow\n31/37 Test #31: Cli.CompleteMigrationWorkflow ...................................   Passed    0.02 sec\n      Start 32: Cli.ErrorCodesAndOffsetContext\n32/37 Test #32: Cli.ErrorCodesAndOffsetContext ..................................   Passed    0.02 sec\n      Start 33: cli_validate_v1\n33/37 Test #33: cli_validate_v1 .................................................   Passed    0.01 sec\n      Start 34: cli_validate_v2\n34/37 Test #34: cli_validate_v2 .................................................   Passed    0.01 sec\n      Start 35: demo_save\n35/37 Test #35: demo_save .......................................................   Passed    0.01 sec\n      Start 36: demo_load\n36/37 Test #36: demo_load .......................................................   Passed    0.01 sec\n      Start 37: cli_workflow\n37/37 Test #37: cli_workflow ....................................................   Passed    0.10 sec\n\n100% tests passed out of 37\n\nTotal Test time (real) =   0.84 sec\n",
+          "summary": true
+        }
+      ]
+    },
+    {
+      "slug": "09-benchmark",
+      "title": "09 / Measure a fixed scene",
+      "records": [
+        {
+          "argv": [
+            "sw_vers"
+          ],
+          "command": "sw_vers",
+          "exit_code": 0,
+          "output": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "uname",
+            "-m"
+          ],
+          "command": "uname -m",
+          "exit_code": 0,
+          "output": "arm64\n",
+          "summary": false
+        },
+        {
+          "argv": [
+            "./build/release/chronicle_benchmark"
+          ],
+          "command": "./build/release/chronicle_benchmark",
+          "exit_code": 0,
+          "output": "compiler=Clang 21.0.0 (clang-2100.3.34.2)\nbuild=Release\nos=macOS\narchitecture=arm64\nhardware_threads=10\nfile_io=warm_cache\nsave_median_ms=14.5216\nload_median_ms=2.44404\nseed=20261011 items=10000 samples=31 bytes=747719\nencode_median_ms=13.7046\ndecode_median_ms=2.28975\n",
+          "summary": false
+        }
+      ]
+    }
+  ]
+}

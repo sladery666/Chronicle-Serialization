@@ -1,0 +1,23 @@
+$ ./build/debug/scene_demo save "$DEMO_DIR"/scene_v1.bin 1
+Saved Player V1
+[exit 0]
+
+$ ./build/debug/scene_demo save "$DEMO_DIR"/scene_v2.bin 2
+Saved Player V2
+[exit 0]
+
+$ ./build/debug/scene_demo load "$DEMO_DIR"/scene_v1.bin
+Meadow: Unknown, health=100, inventory=2
+[exit 0]
+
+$ ./build/debug/scene_demo load "$DEMO_DIR"/scene_v2.bin
+Meadow: Ada, health=100, inventory=2
+[exit 0]
+
+$ ./build/debug/scene_demo save "$DEMO_DIR"/scene_v2_repeat.bin 2
+Saved Player V2
+[exit 0]
+
+$ cmp "$DEMO_DIR"/scene_v2.bin "$DEMO_DIR"/scene_v2_repeat.bin
+
+[exit 0]

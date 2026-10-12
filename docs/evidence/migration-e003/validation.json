@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-12",
+  "ctest": {
+    "debug": {
+      "passed": 72,
+      "failed": 0
+    },
+    "release": {
+      "passed": 72,
+      "failed": 0
+    },
+    "sanitizers": {
+      "passed": 72,
+      "failed": 0
+    }
+  },
+  "formatting": "clang-format --dry-run --Werror passed",
+  "historical_fixtures_unchanged": true,
+  "independent_generator_reproduces_all_fixtures": true,
+  "golden_sha256": {
+    "bad_magic.bin": "f0b4ac7f51f4de8f7045415ea4c7be58f12d9533d54bd2397734b319a54e36a9",
+    "scene_v1.bin": "2b5fd2bb0039139c28a42bd66ca1488547477b7bd965f1a4617a991609cca92c",
+    "scene_v3.bin": "29a0583601066488e5aa7dfe089c059b4859aeec5783d62f482d5a2e9527f5db",
+    "scene_v2.bin": "e50ce36822bf060709731c5892f54ac87811c55f9acd5dcbff3a6832f0129349",
+    "truncated.bin": "df156e3aac57cb6a7e6d7e89ceb4558c23466b6f67643625003c6fbd8425025f"
+  },
+  "source_sha256": {
+    "include/chronicle/scene_bindings.hpp": {
+      "before": "5e3bc6ef9f935824e892438a55580e7a12bda37cbc0b8955cac947e6c9d3d7d3",
+      "after": "988362330f1bdfdc27d6c3663d0e99ab8366187452ecb28387f46019e65a6dc8"
+    },
+    "include/chronicle/serialization.hpp": {
+      "before": "9c089e85ce66aa7761a6bc285069c988b082acbd124fae1cd750a4872d996761",
+      "after": "8e4bfc8d3fcf204ffaf18f9f7cf86a38726cb14c6145b3bb384eb4f2743cd67e"
+    },
+    "include/chronicle/type_binding.hpp": {
+      "before": "a6fcb02fccd2786be463892e460abc66a6c8f782cf80d64d97f673c500ae56b1",
+      "after": "5291730dd876a3b1e77d564f60fedff0f34f923dca93cbb2757cbf83d948f685"
+    },
+    "include/chronicle/schema.hpp": {
+      "before": "9633057d63a8863efe8dd0db86895791fbdd98f75bd87d4ea19b19fe9c92ef56",
+      "after": "5c58000ca3e2bb1699b59ab6603edc6cb2fdb106176394dd9548c50775eed165"
+    },
+    "include/chronicle/scene.hpp": {
+      "before": "e324730ad9d81529b6afe564c4e3f285164746cf33191a55a49f76242648a3f2",
+      "after": "557e90d718ad64b7974e1cc3dfa318687f63abc40589df72710098e17829adcc"
+    },
+    "include/chronicle/migration.hpp": {
+      "before": "c51e8a80e9d23fcbc354209fc847a7c5276242f5214359bbfb86427f44fc04b3",
+      "after": "7546cdd0b5627cc13dbb1223074892fbcb26ab8beeb8fe36fcc2fd9a6adf7aa4"
+    },
+    "src/schema.cpp": {
+      "before": "e7b5c4a4e55b177f6954714cf5c5dbb7dd3f85ef019ee2c551420b105a457dbf",
+      "after": "cc731eb560e1c6a67d0d30326fed1db63fce610d919f63e2b6ddf10325fa7504"
+    },
+    "src/migration.cpp": {
+      "before": "69e51fd17d7a103d3c729f97d89c0da743ed2cd2fd18216a7849f69fdf61ed06",
+      "after": "90f726f7d0707963cc7da42e0d8126000dffcce266396a51f3cda3b45c5c2100"
+    },
+    "src/file.cpp": {
+      "before": "d0f0d7beb6e9a3775069465bafe4440f3b308bf548d510b56c430d8a0ce647e7",
+      "after": "70bfe7e46b26dc86b54f1bbcbf882c16ca96db7b97af46731627ac9b819bab94"
+    },
+    "src/serialization.cpp": {
+      "before": "d2097f206fd6ed6c6346ee312c056c292573f81dbe0c5ba54fe14019435ebeb5",
+      "after": "458767e05773c68be49ca745548575c68741ee5379d4961b2c6109d78270e6a3"
+    },
+    "tools/cli/commands.cpp": {
+      "before": "69c4eb193afe4d0edd9a66b6cda7428ebd9d69b8e180a083d6fd8ebee3e8729a",
+      "after": "d213933a56b48ca9d17ff3c78eaabde4de71f1f0926c6afc5503df7d5df7c7df"
+    },
+    "tools/cli/output.cpp": {
+      "before": "6afef5ff8393550b7c4853a7d278b94222e32c2d6f99aae1eb31c76287f03883",
+      "after": "1db0ec5e1984c83a0c84a7964ae3316621ac75d0225e7a5c40ef9fe2e5ea6ff6"
+    },
+    "tests/migration_v3_tests.cpp": {
+      "before": null,
+      "after": "848a766967425973a713710eba4e29847a26230e0279bcc565f5076fb98c7564"
+    },
+    "tests/serialization_tests.cpp": {
+      "before": "4b3c6969df016c2437a9069c263c1ec5803369718a7d0074fce1fff5aab851d7",
+      "after": "bf8606d72da877048ebdbe7cca7f274a284482a15dc1f80ec25bf16704f9d03a"
+    },
+    "tests/cli_workflow.cmake": {
+      "before": "103d13f08d525632f3e472d123e95e5e0bec41b08e5488bdd7e65d4bae000792",
+      "after": "992a6002feb0e90ae0e23ad21552ca99e6319724f4c8b92393c85685487ee366"
+    },
+    "tests/file_tests.cpp": {
+      "before": "839a4d277e8c02cb4c9999df965f70989aa6d38935c542a125d6571f90318c22",
+      "after": "bad7a845196e8231e6dce36618e94d5d94eda6b48e32aac3b8dc820006906008"
+    },
+    "tests/binding_tests.cpp": {
+      "before": "1d02ddedfa7857e427cf872a317845fdf3e2c6ca5954e56c23c6df7e1ca73abf",
+      "after": "6355c441bf46771ee5d7d7799007b866a2860dbc29ae4a187930b61f577bdc97"
+    },
+    "tests/cli_tests.cpp": {
+      "before": "f1926297bd723417cec2e5df227792e9aa3d6d93fe332a7f31de70d8640dc1fe",
+      "after": "a688b71aa69fbe66c849b4cbbcb92864f252666996362fa3b367aa506577a90a"
+    },
+    "tests/golden/generate.py": {
+      "before": "0f81bcd24bf0354f064d76d7f644af9c8a5e8e61eb2ddbee8213219a63df6fae",
+      "after": "a5b6b15800ed7c6c3b6202f0962a98b5d7b00143dac320bdb54704fec764f6e8"
+    },
+    "examples/scene_demo/main.cpp": {
+      "before": "cca51e18846053a0151a74a94a17af29ee0d624994fbd2dfa0693bfa9af5200f",
+      "after": "ece7c7eb7fcc4de07c851ac6c7db5d8fd661a6ef3eda1794552969f7f26e1d6f"
+    }
+  },
+  "remote_ci": "not executed"
+}

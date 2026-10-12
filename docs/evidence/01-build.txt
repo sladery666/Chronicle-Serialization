@@ -1,0 +1,92 @@
+$ cmake --preset debug
+-- Using the multi-header code from <project>/build/debug/_deps/json-src/include/
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: <project>/build/debug
+[exit 0]
+
+$ cmake --build --preset debug --parallel 2
+ninja: no work to do.
+[exit 0]
+
+$ ctest --preset debug
+Test project <project>/build/debug
+      Start  1: Result.MoveOnlyValueAndError
+ 1/37 Test  #1: Result.MoveOnlyValueAndError ....................................   Passed    0.01 sec
+      Start  2: ByteBuffer.EmptyAndSelfAppend
+ 2/37 Test  #2: ByteBuffer.EmptyAndSelfAppend ...................................   Passed    0.01 sec
+      Start  3: Binary.KnownLittleEndianBytes
+ 3/37 Test  #3: Binary.KnownLittleEndianBytes ...................................   Passed    0.01 sec
+      Start  4: Binary.ExtremesAndSignedFloats
+ 4/37 Test  #4: Binary.ExtremesAndSignedFloats ..................................   Passed    0.01 sec
+      Start  5: Binary.StringsUtf8AndEmbeddedNull
+ 5/37 Test  #5: Binary.StringsUtf8AndEmbeddedNull ...............................   Passed    0.01 sec
+      Start  6: Binary.BoundsOverflowAndFailureDoesNotAdvance
+ 6/37 Test  #6: Binary.BoundsOverflowAndFailureDoesNotAdvance ...................   Passed    0.01 sec
+      Start  7: Binary.StringLimitsAndTrailingBytes
+ 7/37 Test  #7: Binary.StringLimitsAndTrailingBytes .............................   Passed    0.01 sec
+      Start  8: Scene.DeterministicRoundTripAndGoldenV2
+ 8/37 Test  #8: Scene.DeterministicRoundTripAndGoldenV2 .........................   Passed    0.01 sec
+      Start  9: Scene.EmptyAndLargeIntegersRoundTrip
+ 9/37 Test  #9: Scene.EmptyAndLargeIntegersRoundTrip ............................   Passed    0.01 sec
+      Start 10: Scene.RejectNonFiniteOverflowAndUnsupportedVersions
+10/37 Test #10: Scene.RejectNonFiniteOverflowAndUnsupportedVersions .............   Passed    0.01 sec
+      Start 11: Compatibility.GoldenV1WideningAndDefaultName
+11/37 Test #11: Compatibility.GoldenV1WideningAndDefaultName ....................   Passed    0.01 sec
+      Start 12: Compatibility.MissingFieldsUseDefaults
+12/37 Test #12: Compatibility.MissingFieldsUseDefaults ..........................   Passed    0.01 sec
+      Start 13: Compatibility.UnknownFieldsAndWireTypesAreSkipped
+13/37 Test #13: Compatibility.UnknownFieldsAndWireTypesAreSkipped ...............   Passed    0.01 sec
+      Start 14: Schema.RegistrationValidationAndCanonicalOrder
+14/37 Test #14: Schema.RegistrationValidationAndCanonicalOrder ..................   Passed    0.01 sec
+      Start 15: Malformed.EveryTruncationIsRejected
+15/37 Test #15: Malformed.EveryTruncationIsRejected .............................   Passed    0.01 sec
+      Start 16: Malformed.HeaderVersionsLengthsAndTrailingBytes
+16/37 Test #16: Malformed.HeaderVersionsLengthsAndTrailingBytes .................   Passed    0.01 sec
+      Start 17: Malformed.FieldWireDuplicateFlagsAndSchemaVersions
+17/37 Test #17: Malformed.FieldWireDuplicateFlagsAndSchemaVersions ..............   Passed    0.01 sec
+      Start 18: Malformed.StringsArraysAndScalarPayloadLengths
+18/37 Test #18: Malformed.StringsArraysAndScalarPayloadLengths ..................   Passed    0.01 sec
+      Start 19: Malformed.SeededMutationSmoke
+19/37 Test #19: Malformed.SeededMutationSmoke ...................................   Passed    0.06 sec
+      Start 20: Malformed.NestedInvalidLengthsUtf8AndNaN
+20/37 Test #20: Malformed.NestedInvalidLengthsUtf8AndNaN ........................   Passed    0.01 sec
+      Start 21: File.SaveLoadAndAtomicReplacement
+21/37 Test #21: File.SaveLoadAndAtomicReplacement ...............................   Passed    0.01 sec
+      Start 22: File.MissingAndOversizedFiles
+22/37 Test #22: File.MissingAndOversizedFiles ...................................   Passed    0.01 sec
+      Start 23: Migration.V1ToV2SourcePreservedAndValidated
+23/37 Test #23: Migration.V1ToV2SourcePreservedAndValidated .....................   Passed    0.01 sec
+      Start 24: Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles
+24/37 Test #24: Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles ...   Passed    0.01 sec
+      Start 25: Migration.AliasedDestinationIsRejected
+25/37 Test #25: Migration.AliasedDestinationIsRejected ..........................   Passed    0.01 sec
+      Start 26: Migration.InvalidSceneCannotReplaceValidSave
+26/37 Test #26: Migration.InvalidSceneCannotReplaceValidSave ....................   Passed    0.01 sec
+      Start 27: Cli.HelpUsageAndVersion
+27/37 Test #27: Cli.HelpUsageAndVersion .........................................   Passed    0.01 sec
+      Start 28: Cli.ValidateAndInspect
+28/37 Test #28: Cli.ValidateAndInspect ..........................................   Passed    0.01 sec
+      Start 29: Cli.JsonIsValidAndPreservesStringsAndIntegers
+29/37 Test #29: Cli.JsonIsValidAndPreservesStringsAndIntegers ...................   Passed    0.01 sec
+      Start 30: Cli.SemanticDiffIncludesHealthInventoryAndSchema
+30/37 Test #30: Cli.SemanticDiffIncludesHealthInventoryAndSchema ................   Passed    0.01 sec
+      Start 31: Cli.CompleteMigrationWorkflow
+31/37 Test #31: Cli.CompleteMigrationWorkflow ...................................   Passed    0.01 sec
+      Start 32: Cli.ErrorCodesAndOffsetContext
+32/37 Test #32: Cli.ErrorCodesAndOffsetContext ..................................   Passed    0.01 sec
+      Start 33: cli_validate_v1
+33/37 Test #33: cli_validate_v1 .................................................   Passed    0.00 sec
+      Start 34: cli_validate_v2
+34/37 Test #34: cli_validate_v2 .................................................   Passed    0.00 sec
+      Start 35: demo_save
+35/37 Test #35: demo_save .......................................................   Passed    0.00 sec
+      Start 36: demo_load
+36/37 Test #36: demo_load .......................................................   Passed    0.00 sec
+      Start 37: cli_workflow
+37/37 Test #37: cli_workflow ....................................................   Passed    0.02 sec
+
+100% tests passed out of 37
+
+Total Test time (real) =   0.28 sec
+[exit 0]

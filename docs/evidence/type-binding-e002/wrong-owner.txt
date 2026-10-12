@@ -1,0 +1,66 @@
+#include "chronicle/scene_bindings.hpp"
+struct WrongOwner {
+    std::uint64_t id = 0;
+};
+namespace chronicle {
+template <> struct TypeBinding<WrongOwner> {
+    static constexpr TypeId typeId = 90;
+    static constexpr std::string_view name = "WrongOwner";
+    static constexpr std::uint16_t minVersion = 1, maxVersion = 1;
+    static constexpr auto fields() {
+        return std::tuple{bindField(1, "id", &Player::id)};
+    }
+};
+}
+int main() {
+    chronicle::SchemaRegistry registry;
+    return chronicle::registerBinding<WrongOwner>(registry) ? 0 : 1;
+}
+
+--- Expected compile rejection ---
+In file included from <stdin>:1:
+In file included from include/chronicle/scene_bindings.hpp:3:
+include/chronicle/type_binding.hpp:108:31: error: static assertion failed: field member belongs to a different type
+  108 |                 static_assert(std::same_as<typename F::Object, T>,
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+include/chronicle/type_binding.hpp:127:14: note: in instantiation of function template specialization 'chronicle::binding_detail::makeSchema(std::uint16_t)::(anonymous class)::operator()(const chronicle::MemberBinding<chronicle::Player, unsigned long long> &)::(anonymous class)::operator()<chronicle::MemberBinding<chronicle::Player, unsigned long long>>' requested here
+  127 |             (add(fields), ...);
+      |              ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/invoke.h:77:47: note: in instantiation of function template specialization 'chronicle::binding_detail::makeSchema(std::uint16_t)::(anonymous class)::operator()<chronicle::MemberBinding<chronicle::Player, unsigned long long>>' requested here
+   77 | struct __invoke_result_impl<__void_t<decltype(__builtin_invoke(std::declval<_Args>()...))>, _Args...> {
+      |                                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/invoke.h:85:1: note: during template argument deduction for class template partial specialization '__invoke_result_impl<__void_t<decltype(__builtin_invoke(std::declval<_Args>()...))>, _Args...>' [with _Args = <(lambda at include/chronicle/type_binding.hpp:105:9), chronicle::MemberBinding<chronicle::Player, unsigned long long>>]
+   85 | using __invoke_result_t _LIBCPP_NODEBUG = typename __invoke_result<_Args...>::type;
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/invoke.h:85:1: note: in instantiation of template class 'std::__invoke_result_impl<void, (lambda at include/chronicle/type_binding.hpp:105:9), chronicle::MemberBinding<chronicle::Player, unsigned long long>>' requested here
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/invoke.h:88:41: note: in instantiation of template type alias '__invoke_result_t' requested here
+   88 | _LIBCPP_HIDE_FROM_ABI _LIBCPP_CONSTEXPR __invoke_result_t<_Args...> __invoke(_Args&&... __args)
+      |                                         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/tuple:1397:29: note: (skipping 4 contexts in backtrace; use -ftemplate-backtrace-limit=0 to see all)
+ 1397 |     _LIBCPP_NOEXCEPT_RETURN(std::__invoke(std::forward<_Fn>(__f), std::get<_Id>(std::forward<_Tuple>(__t))...))
+      |                             ^
+include/chronicle/type_binding.hpp:104:10: note: in instantiation of function template specialization 'std::apply<(lambda at include/chronicle/type_binding.hpp:105:9), std::tuple<chronicle::MemberBinding<chronicle::Player, unsigned long long>>>' requested here
+  104 |     std::apply(
+      |          ^
+include/chronicle/type_binding.hpp:139:17: note: in instantiation of function template specialization 'chronicle::binding_detail::makeSchema<WrongOwner>' requested here
+  139 |                 makeSchema<T>(static_cast<std::uint16_t>(v)));
+      |                 ^
+include/chronicle/type_binding.hpp:356:32: note: in instantiation of function template specialization 'chronicle::binding_detail::schema<WrongOwner>' requested here
+  356 |         const auto& metadata = schema<T>(version);
+      |                                ^
+include/chronicle/type_binding.hpp:389:25: note: in instantiation of function template specialization 'chronicle::binding_detail::registerType<WrongOwner>' requested here
+  389 |         binding_detail::registerType<T>(candidate);
+      |                         ^
+<stdin>:17:23: note: in instantiation of function template specialization 'chronicle::registerBinding<WrongOwner>' requested here
+   17 |     return chronicle::registerBinding<WrongOwner>(registry) ? 0 : 1;
+      |                       ^
+include/chronicle/type_binding.hpp:108:31: note: because 'std::same_as<typename F::Object, WrongOwner>' evaluated to false
+  108 |                 static_assert(std::same_as<typename F::Object, T>,
+      |                               ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__concepts/same_as.h:29:19: note: because '__same_as_impl<chronicle::Player, WrongOwner>' evaluated to false
+   29 | concept same_as = __same_as_impl<_Tp, _Up> && __same_as_impl<_Up, _Tp>;
+      |                   ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__concepts/same_as.h:26:26: note: because '_IsSame<chronicle::Player, WrongOwner>::value' evaluated to false
+   26 | concept __same_as_impl = _IsSame<_Tp, _Up>::value;
+      |                          ^
+1 error generated.

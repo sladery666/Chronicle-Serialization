@@ -1,0 +1,13 @@
+$ ./build/debug/chronicle diff "$DEMO_DIR"/scene_v1.bin "$DEMO_DIR"/scene_migrated.bin
+player.schema: 1 -> 2
+player.name: field added, default = "Unknown"
+player.health: int32 -> int64
+[exit 1]
+
+$ ./build/debug/chronicle diff "$DEMO_DIR"/scene_migrated.bin "$DEMO_DIR"/scene_v2.bin
+player.name: "Unknown" -> "Ada"
+[exit 1]
+
+$ ./build/debug/chronicle diff "$DEMO_DIR"/scene_v2.bin "$DEMO_DIR"/scene_v2_repeat.bin
+No semantic differences
+[exit 0]

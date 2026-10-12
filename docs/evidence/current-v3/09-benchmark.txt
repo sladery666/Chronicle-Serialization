@@ -1,0 +1,35 @@
+$ sw_vers
+ProductName:		macOS
+ProductVersion:		26.6.2
+BuildVersion:		25G83
+[exit 0]
+
+$ uname -m
+arm64
+[exit 0]
+
+$ ./build/release/chronicle_benchmark
+compiler=Clang 21.0.0 (clang-2100.3.34.2)
+build=Release
+hardware_threads=10
+file_io=warm_cache
+memory_metric=operator_new_requested_bytes
+measurement_scope=operation_including_result_destruction_and_validation
+seed=20261011 items=10000 samples=31 bytes=747767
+encode_median_ms=2.32025
+encode_allocations=60039
+encode_requested_bytes=8022681
+encode_peak_live_bytes=2042459
+decode_median_ms=1.09446
+decode_allocations=10009
+decode_requested_bytes=1708231
+decode_peak_live_bytes=1067847
+save_median_ms=2.87938
+save_allocations=60046
+save_requested_bytes=8027537
+save_peak_live_bytes=2042459
+load_median_ms=1.20979
+load_allocations=10011
+load_requested_bytes=2460094
+load_peak_live_bytes=1815614
+[exit 0]

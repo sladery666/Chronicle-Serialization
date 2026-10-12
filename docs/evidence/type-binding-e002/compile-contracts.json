@@ -1,0 +1,12 @@
+[
+  {
+    "probe": "unsupported-member",
+    "expected_rejection": true,
+    "compiler_exit_code": 1
+  },
+  {
+    "probe": "wrong-owner",
+    "expected_rejection": true,
+    "compiler_exit_code": 1
+  }
+]

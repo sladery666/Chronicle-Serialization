@@ -1,0 +1,23 @@
+compiler=Clang 21.0.0 (clang-2100.3.34.2)
+build=Release
+hardware_threads=10
+file_io=warm_cache
+memory_metric=operator_new_requested_bytes
+measurement_scope=operation_including_result_destruction_and_validation
+seed=20261011 items=10000 samples=31 bytes=747719
+encode_median_ms=2.50483
+encode_allocations=70041
+encode_requested_bytes=7622643
+encode_peak_live_bytes=2042403
+decode_median_ms=1.09258
+decode_allocations=10007
+decode_requested_bytes=1708055
+decode_peak_live_bytes=1067799
+save_median_ms=2.86646
+save_allocations=70048
+save_requested_bytes=7627499
+save_peak_live_bytes=2042403
+load_median_ms=1.17283
+load_allocations=10009
+load_requested_bytes=2459870
+load_peak_live_bytes=1815518

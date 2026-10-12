@@ -1,0 +1,1123 @@
+Start testing: Oct 12 09:34 BST
+----------------------------------------------------------
+1/44 Testing: Result.MoveOnlyValueAndError
+1/44 Test: Result.MoveOnlyValueAndError
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Result.MoveOnlyValueAndError" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Result.MoveOnlyValueAndError" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Result.MoveOnlyValueAndError
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Result
+[ RUN      ] Result.MoveOnlyValueAndError
+[       OK ] Result.MoveOnlyValueAndError (0 ms)
+[----------] 1 test from Result (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Result.MoveOnlyValueAndError" end time: Oct 12 09:34 BST
+"Result.MoveOnlyValueAndError" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/44 Testing: ByteBuffer.EmptyAndSelfAppend
+2/44 Test: ByteBuffer.EmptyAndSelfAppend
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=ByteBuffer.EmptyAndSelfAppend" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"ByteBuffer.EmptyAndSelfAppend" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ByteBuffer.EmptyAndSelfAppend
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ByteBuffer
+[ RUN      ] ByteBuffer.EmptyAndSelfAppend
+[       OK ] ByteBuffer.EmptyAndSelfAppend (0 ms)
+[----------] 1 test from ByteBuffer (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ByteBuffer.EmptyAndSelfAppend" end time: Oct 12 09:34 BST
+"ByteBuffer.EmptyAndSelfAppend" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/44 Testing: ByteBuffer.ExternalOwnershipAndPartialSelfAppend
+3/44 Test: ByteBuffer.ExternalOwnershipAndPartialSelfAppend
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=ByteBuffer.ExternalOwnershipAndPartialSelfAppend" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"ByteBuffer.ExternalOwnershipAndPartialSelfAppend" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ByteBuffer.ExternalOwnershipAndPartialSelfAppend
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ByteBuffer
+[ RUN      ] ByteBuffer.ExternalOwnershipAndPartialSelfAppend
+[       OK ] ByteBuffer.ExternalOwnershipAndPartialSelfAppend (0 ms)
+[----------] 1 test from ByteBuffer (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ByteBuffer.ExternalOwnershipAndPartialSelfAppend" end time: Oct 12 09:34 BST
+"ByteBuffer.ExternalOwnershipAndPartialSelfAppend" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/44 Testing: ByteBuffer.AdoptsMovedStorage
+4/44 Test: ByteBuffer.AdoptsMovedStorage
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=ByteBuffer.AdoptsMovedStorage" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"ByteBuffer.AdoptsMovedStorage" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ByteBuffer.AdoptsMovedStorage
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ByteBuffer
+[ RUN      ] ByteBuffer.AdoptsMovedStorage
+[       OK ] ByteBuffer.AdoptsMovedStorage (0 ms)
+[----------] 1 test from ByteBuffer (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ByteBuffer.AdoptsMovedStorage" end time: Oct 12 09:34 BST
+"ByteBuffer.AdoptsMovedStorage" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/44 Testing: Binary.KnownLittleEndianBytes
+5/44 Test: Binary.KnownLittleEndianBytes
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Binary.KnownLittleEndianBytes" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Binary.KnownLittleEndianBytes" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Binary.KnownLittleEndianBytes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Binary
+[ RUN      ] Binary.KnownLittleEndianBytes
+[       OK ] Binary.KnownLittleEndianBytes (0 ms)
+[----------] 1 test from Binary (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Binary.KnownLittleEndianBytes" end time: Oct 12 09:34 BST
+"Binary.KnownLittleEndianBytes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/44 Testing: Binary.ExtremesAndSignedFloats
+6/44 Test: Binary.ExtremesAndSignedFloats
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Binary.ExtremesAndSignedFloats" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Binary.ExtremesAndSignedFloats" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Binary.ExtremesAndSignedFloats
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Binary
+[ RUN      ] Binary.ExtremesAndSignedFloats
+[       OK ] Binary.ExtremesAndSignedFloats (0 ms)
+[----------] 1 test from Binary (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Binary.ExtremesAndSignedFloats" end time: Oct 12 09:34 BST
+"Binary.ExtremesAndSignedFloats" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/44 Testing: Binary.StringsUtf8AndEmbeddedNull
+7/44 Test: Binary.StringsUtf8AndEmbeddedNull
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Binary.StringsUtf8AndEmbeddedNull" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Binary.StringsUtf8AndEmbeddedNull" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Binary.StringsUtf8AndEmbeddedNull
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Binary
+[ RUN      ] Binary.StringsUtf8AndEmbeddedNull
+[       OK ] Binary.StringsUtf8AndEmbeddedNull (0 ms)
+[----------] 1 test from Binary (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Binary.StringsUtf8AndEmbeddedNull" end time: Oct 12 09:34 BST
+"Binary.StringsUtf8AndEmbeddedNull" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/44 Testing: Binary.BoundsOverflowAndFailureDoesNotAdvance
+8/44 Test: Binary.BoundsOverflowAndFailureDoesNotAdvance
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Binary.BoundsOverflowAndFailureDoesNotAdvance" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Binary.BoundsOverflowAndFailureDoesNotAdvance" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Binary.BoundsOverflowAndFailureDoesNotAdvance
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Binary
+[ RUN      ] Binary.BoundsOverflowAndFailureDoesNotAdvance
+[       OK ] Binary.BoundsOverflowAndFailureDoesNotAdvance (0 ms)
+[----------] 1 test from Binary (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Binary.BoundsOverflowAndFailureDoesNotAdvance" end time: Oct 12 09:34 BST
+"Binary.BoundsOverflowAndFailureDoesNotAdvance" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/44 Testing: Binary.StringLimitsAndTrailingBytes
+9/44 Test: Binary.StringLimitsAndTrailingBytes
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Binary.StringLimitsAndTrailingBytes" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Binary.StringLimitsAndTrailingBytes" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Binary.StringLimitsAndTrailingBytes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Binary
+[ RUN      ] Binary.StringLimitsAndTrailingBytes
+[       OK ] Binary.StringLimitsAndTrailingBytes (0 ms)
+[----------] 1 test from Binary (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Binary.StringLimitsAndTrailingBytes" end time: Oct 12 09:34 BST
+"Binary.StringLimitsAndTrailingBytes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/44 Testing: Binary.ReserveKeepsLimitAndBytes
+10/44 Test: Binary.ReserveKeepsLimitAndBytes
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Binary.ReserveKeepsLimitAndBytes" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Binary.ReserveKeepsLimitAndBytes" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Binary.ReserveKeepsLimitAndBytes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Binary
+[ RUN      ] Binary.ReserveKeepsLimitAndBytes
+[       OK ] Binary.ReserveKeepsLimitAndBytes (8 ms)
+[----------] 1 test from Binary (8 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (8 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Binary.ReserveKeepsLimitAndBytes" end time: Oct 12 09:34 BST
+"Binary.ReserveKeepsLimitAndBytes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/44 Testing: Scene.DeterministicRoundTripAndGoldenV2
+11/44 Test: Scene.DeterministicRoundTripAndGoldenV2
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Scene.DeterministicRoundTripAndGoldenV2" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Scene.DeterministicRoundTripAndGoldenV2" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Scene.DeterministicRoundTripAndGoldenV2
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Scene
+[ RUN      ] Scene.DeterministicRoundTripAndGoldenV2
+[       OK ] Scene.DeterministicRoundTripAndGoldenV2 (0 ms)
+[----------] 1 test from Scene (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Scene.DeterministicRoundTripAndGoldenV2" end time: Oct 12 09:34 BST
+"Scene.DeterministicRoundTripAndGoldenV2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/44 Testing: Scene.EmptyAndLargeIntegersRoundTrip
+12/44 Test: Scene.EmptyAndLargeIntegersRoundTrip
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Scene.EmptyAndLargeIntegersRoundTrip" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Scene.EmptyAndLargeIntegersRoundTrip" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Scene.EmptyAndLargeIntegersRoundTrip
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Scene
+[ RUN      ] Scene.EmptyAndLargeIntegersRoundTrip
+[       OK ] Scene.EmptyAndLargeIntegersRoundTrip (0 ms)
+[----------] 1 test from Scene (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Scene.EmptyAndLargeIntegersRoundTrip" end time: Oct 12 09:34 BST
+"Scene.EmptyAndLargeIntegersRoundTrip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/44 Testing: Scene.RejectNonFiniteOverflowAndUnsupportedVersions
+13/44 Test: Scene.RejectNonFiniteOverflowAndUnsupportedVersions
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Scene.RejectNonFiniteOverflowAndUnsupportedVersions" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Scene.RejectNonFiniteOverflowAndUnsupportedVersions" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Scene.RejectNonFiniteOverflowAndUnsupportedVersions
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Scene
+[ RUN      ] Scene.RejectNonFiniteOverflowAndUnsupportedVersions
+[       OK ] Scene.RejectNonFiniteOverflowAndUnsupportedVersions (0 ms)
+[----------] 1 test from Scene (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Scene.RejectNonFiniteOverflowAndUnsupportedVersions" end time: Oct 12 09:34 BST
+"Scene.RejectNonFiniteOverflowAndUnsupportedVersions" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/44 Testing: Compatibility.GoldenV1WideningAndDefaultName
+14/44 Test: Compatibility.GoldenV1WideningAndDefaultName
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Compatibility.GoldenV1WideningAndDefaultName" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Compatibility.GoldenV1WideningAndDefaultName" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Compatibility.GoldenV1WideningAndDefaultName
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Compatibility
+[ RUN      ] Compatibility.GoldenV1WideningAndDefaultName
+[       OK ] Compatibility.GoldenV1WideningAndDefaultName (0 ms)
+[----------] 1 test from Compatibility (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Compatibility.GoldenV1WideningAndDefaultName" end time: Oct 12 09:34 BST
+"Compatibility.GoldenV1WideningAndDefaultName" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/44 Testing: Compatibility.MissingFieldsUseDefaults
+15/44 Test: Compatibility.MissingFieldsUseDefaults
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Compatibility.MissingFieldsUseDefaults" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Compatibility.MissingFieldsUseDefaults" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Compatibility.MissingFieldsUseDefaults
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Compatibility
+[ RUN      ] Compatibility.MissingFieldsUseDefaults
+[       OK ] Compatibility.MissingFieldsUseDefaults (0 ms)
+[----------] 1 test from Compatibility (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Compatibility.MissingFieldsUseDefaults" end time: Oct 12 09:34 BST
+"Compatibility.MissingFieldsUseDefaults" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/44 Testing: Compatibility.UnknownFieldsAndWireTypesAreSkipped
+16/44 Test: Compatibility.UnknownFieldsAndWireTypesAreSkipped
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Compatibility.UnknownFieldsAndWireTypesAreSkipped" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Compatibility.UnknownFieldsAndWireTypesAreSkipped" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Compatibility.UnknownFieldsAndWireTypesAreSkipped
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Compatibility
+[ RUN      ] Compatibility.UnknownFieldsAndWireTypesAreSkipped
+[       OK ] Compatibility.UnknownFieldsAndWireTypesAreSkipped (0 ms)
+[----------] 1 test from Compatibility (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Compatibility.UnknownFieldsAndWireTypesAreSkipped" end time: Oct 12 09:34 BST
+"Compatibility.UnknownFieldsAndWireTypesAreSkipped" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/44 Testing: Schema.RegistrationValidationAndCanonicalOrder
+17/44 Test: Schema.RegistrationValidationAndCanonicalOrder
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Schema.RegistrationValidationAndCanonicalOrder" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Schema.RegistrationValidationAndCanonicalOrder" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Schema.RegistrationValidationAndCanonicalOrder
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Schema
+[ RUN      ] Schema.RegistrationValidationAndCanonicalOrder
+[       OK ] Schema.RegistrationValidationAndCanonicalOrder (0 ms)
+[----------] 1 test from Schema (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Schema.RegistrationValidationAndCanonicalOrder" end time: Oct 12 09:34 BST
+"Schema.RegistrationValidationAndCanonicalOrder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/44 Testing: Malformed.EveryTruncationIsRejected
+18/44 Test: Malformed.EveryTruncationIsRejected
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Malformed.EveryTruncationIsRejected" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Malformed.EveryTruncationIsRejected" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Malformed.EveryTruncationIsRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Malformed
+[ RUN      ] Malformed.EveryTruncationIsRejected
+[       OK ] Malformed.EveryTruncationIsRejected (1 ms)
+[----------] 1 test from Malformed (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Malformed.EveryTruncationIsRejected" end time: Oct 12 09:34 BST
+"Malformed.EveryTruncationIsRejected" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/44 Testing: Malformed.HeaderVersionsLengthsAndTrailingBytes
+19/44 Test: Malformed.HeaderVersionsLengthsAndTrailingBytes
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Malformed.HeaderVersionsLengthsAndTrailingBytes" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Malformed.HeaderVersionsLengthsAndTrailingBytes" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Malformed.HeaderVersionsLengthsAndTrailingBytes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Malformed
+[ RUN      ] Malformed.HeaderVersionsLengthsAndTrailingBytes
+[       OK ] Malformed.HeaderVersionsLengthsAndTrailingBytes (0 ms)
+[----------] 1 test from Malformed (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Malformed.HeaderVersionsLengthsAndTrailingBytes" end time: Oct 12 09:34 BST
+"Malformed.HeaderVersionsLengthsAndTrailingBytes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/44 Testing: Malformed.FieldWireDuplicateFlagsAndSchemaVersions
+20/44 Test: Malformed.FieldWireDuplicateFlagsAndSchemaVersions
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Malformed.FieldWireDuplicateFlagsAndSchemaVersions" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Malformed.FieldWireDuplicateFlagsAndSchemaVersions" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Malformed.FieldWireDuplicateFlagsAndSchemaVersions
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Malformed
+[ RUN      ] Malformed.FieldWireDuplicateFlagsAndSchemaVersions
+[       OK ] Malformed.FieldWireDuplicateFlagsAndSchemaVersions (0 ms)
+[----------] 1 test from Malformed (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Malformed.FieldWireDuplicateFlagsAndSchemaVersions" end time: Oct 12 09:34 BST
+"Malformed.FieldWireDuplicateFlagsAndSchemaVersions" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/44 Testing: Malformed.StringsArraysAndScalarPayloadLengths
+21/44 Test: Malformed.StringsArraysAndScalarPayloadLengths
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Malformed.StringsArraysAndScalarPayloadLengths" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Malformed.StringsArraysAndScalarPayloadLengths" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Malformed.StringsArraysAndScalarPayloadLengths
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Malformed
+[ RUN      ] Malformed.StringsArraysAndScalarPayloadLengths
+[       OK ] Malformed.StringsArraysAndScalarPayloadLengths (0 ms)
+[----------] 1 test from Malformed (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Malformed.StringsArraysAndScalarPayloadLengths" end time: Oct 12 09:34 BST
+"Malformed.StringsArraysAndScalarPayloadLengths" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/44 Testing: Malformed.SeededMutationSmoke
+22/44 Test: Malformed.SeededMutationSmoke
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Malformed.SeededMutationSmoke" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Malformed.SeededMutationSmoke" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Malformed.SeededMutationSmoke
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Malformed
+[ RUN      ] Malformed.SeededMutationSmoke
+[       OK ] Malformed.SeededMutationSmoke (4 ms)
+[----------] 1 test from Malformed (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (4 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Malformed.SeededMutationSmoke" end time: Oct 12 09:34 BST
+"Malformed.SeededMutationSmoke" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/44 Testing: Malformed.NestedInvalidLengthsUtf8AndNaN
+23/44 Test: Malformed.NestedInvalidLengthsUtf8AndNaN
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Malformed.NestedInvalidLengthsUtf8AndNaN" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Malformed.NestedInvalidLengthsUtf8AndNaN" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Malformed.NestedInvalidLengthsUtf8AndNaN
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Malformed
+[ RUN      ] Malformed.NestedInvalidLengthsUtf8AndNaN
+[       OK ] Malformed.NestedInvalidLengthsUtf8AndNaN (0 ms)
+[----------] 1 test from Malformed (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Malformed.NestedInvalidLengthsUtf8AndNaN" end time: Oct 12 09:34 BST
+"Malformed.NestedInvalidLengthsUtf8AndNaN" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/44 Testing: Ownership.BorrowedRecordsAndOwnedSnapshot
+24/44 Test: Ownership.BorrowedRecordsAndOwnedSnapshot
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Ownership.BorrowedRecordsAndOwnedSnapshot" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Ownership.BorrowedRecordsAndOwnedSnapshot" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Ownership.BorrowedRecordsAndOwnedSnapshot
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Ownership
+[ RUN      ] Ownership.BorrowedRecordsAndOwnedSnapshot
+[       OK ] Ownership.BorrowedRecordsAndOwnedSnapshot (0 ms)
+[----------] 1 test from Ownership (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Ownership.BorrowedRecordsAndOwnedSnapshot" end time: Oct 12 09:34 BST
+"Ownership.BorrowedRecordsAndOwnedSnapshot" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/44 Testing: Ownership.LoadedSceneOutlivesInputAndCopyMove
+25/44 Test: Ownership.LoadedSceneOutlivesInputAndCopyMove
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Ownership.LoadedSceneOutlivesInputAndCopyMove" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Ownership.LoadedSceneOutlivesInputAndCopyMove" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Ownership.LoadedSceneOutlivesInputAndCopyMove
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Ownership
+[ RUN      ] Ownership.LoadedSceneOutlivesInputAndCopyMove
+[       OK ] Ownership.LoadedSceneOutlivesInputAndCopyMove (0 ms)
+[----------] 1 test from Ownership (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Ownership.LoadedSceneOutlivesInputAndCopyMove" end time: Oct 12 09:34 BST
+"Ownership.LoadedSceneOutlivesInputAndCopyMove" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/44 Testing: Ownership.MaximumFieldCountAndLateDuplicate
+26/44 Test: Ownership.MaximumFieldCountAndLateDuplicate
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Ownership.MaximumFieldCountAndLateDuplicate" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Ownership.MaximumFieldCountAndLateDuplicate" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Ownership.MaximumFieldCountAndLateDuplicate
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Ownership
+[ RUN      ] Ownership.MaximumFieldCountAndLateDuplicate
+[       OK ] Ownership.MaximumFieldCountAndLateDuplicate (0 ms)
+[----------] 1 test from Ownership (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Ownership.MaximumFieldCountAndLateDuplicate" end time: Oct 12 09:34 BST
+"Ownership.MaximumFieldCountAndLateDuplicate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/44 Testing: File.SaveLoadAndAtomicReplacement
+27/44 Test: File.SaveLoadAndAtomicReplacement
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=File.SaveLoadAndAtomicReplacement" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"File.SaveLoadAndAtomicReplacement" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = File.SaveLoadAndAtomicReplacement
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from File
+[ RUN      ] File.SaveLoadAndAtomicReplacement
+[       OK ] File.SaveLoadAndAtomicReplacement (0 ms)
+[----------] 1 test from File (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"File.SaveLoadAndAtomicReplacement" end time: Oct 12 09:34 BST
+"File.SaveLoadAndAtomicReplacement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/44 Testing: File.MissingAndOversizedFiles
+28/44 Test: File.MissingAndOversizedFiles
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=File.MissingAndOversizedFiles" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"File.MissingAndOversizedFiles" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = File.MissingAndOversizedFiles
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from File
+[ RUN      ] File.MissingAndOversizedFiles
+[       OK ] File.MissingAndOversizedFiles (0 ms)
+[----------] 1 test from File (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"File.MissingAndOversizedFiles" end time: Oct 12 09:34 BST
+"File.MissingAndOversizedFiles" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/44 Testing: Migration.V1ToV2SourcePreservedAndValidated
+29/44 Test: Migration.V1ToV2SourcePreservedAndValidated
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Migration.V1ToV2SourcePreservedAndValidated" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Migration.V1ToV2SourcePreservedAndValidated" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Migration.V1ToV2SourcePreservedAndValidated
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Migration
+[ RUN      ] Migration.V1ToV2SourcePreservedAndValidated
+[       OK ] Migration.V1ToV2SourcePreservedAndValidated (0 ms)
+[----------] 1 test from Migration (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Migration.V1ToV2SourcePreservedAndValidated" end time: Oct 12 09:34 BST
+"Migration.V1ToV2SourcePreservedAndValidated" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/44 Testing: Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles
+30/44 Test: Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Migration
+[ RUN      ] Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles
+[       OK ] Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles (1 ms)
+[----------] 1 test from Migration (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles" end time: Oct 12 09:34 BST
+"Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/44 Testing: Migration.AliasedDestinationIsRejected
+31/44 Test: Migration.AliasedDestinationIsRejected
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Migration.AliasedDestinationIsRejected" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Migration.AliasedDestinationIsRejected" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Migration.AliasedDestinationIsRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Migration
+[ RUN      ] Migration.AliasedDestinationIsRejected
+[       OK ] Migration.AliasedDestinationIsRejected (1 ms)
+[----------] 1 test from Migration (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Migration.AliasedDestinationIsRejected" end time: Oct 12 09:34 BST
+"Migration.AliasedDestinationIsRejected" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/44 Testing: Migration.InvalidSceneCannotReplaceValidSave
+32/44 Test: Migration.InvalidSceneCannotReplaceValidSave
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Migration.InvalidSceneCannotReplaceValidSave" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Migration.InvalidSceneCannotReplaceValidSave" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Migration.InvalidSceneCannotReplaceValidSave
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Migration
+[ RUN      ] Migration.InvalidSceneCannotReplaceValidSave
+[       OK ] Migration.InvalidSceneCannotReplaceValidSave (0 ms)
+[----------] 1 test from Migration (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Migration.InvalidSceneCannotReplaceValidSave" end time: Oct 12 09:34 BST
+"Migration.InvalidSceneCannotReplaceValidSave" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/44 Testing: Cli.HelpUsageAndVersion
+33/44 Test: Cli.HelpUsageAndVersion
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Cli.HelpUsageAndVersion" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Cli.HelpUsageAndVersion" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Cli.HelpUsageAndVersion
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Cli
+[ RUN      ] Cli.HelpUsageAndVersion
+[       OK ] Cli.HelpUsageAndVersion (0 ms)
+[----------] 1 test from Cli (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Cli.HelpUsageAndVersion" end time: Oct 12 09:34 BST
+"Cli.HelpUsageAndVersion" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/44 Testing: Cli.ValidateAndInspect
+34/44 Test: Cli.ValidateAndInspect
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Cli.ValidateAndInspect" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Cli.ValidateAndInspect" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Cli.ValidateAndInspect
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Cli
+[ RUN      ] Cli.ValidateAndInspect
+[       OK ] Cli.ValidateAndInspect (0 ms)
+[----------] 1 test from Cli (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Cli.ValidateAndInspect" end time: Oct 12 09:34 BST
+"Cli.ValidateAndInspect" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/44 Testing: Cli.JsonIsValidAndPreservesStringsAndIntegers
+35/44 Test: Cli.JsonIsValidAndPreservesStringsAndIntegers
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Cli.JsonIsValidAndPreservesStringsAndIntegers" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Cli.JsonIsValidAndPreservesStringsAndIntegers" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Cli.JsonIsValidAndPreservesStringsAndIntegers
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Cli
+[ RUN      ] Cli.JsonIsValidAndPreservesStringsAndIntegers
+[       OK ] Cli.JsonIsValidAndPreservesStringsAndIntegers (0 ms)
+[----------] 1 test from Cli (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Cli.JsonIsValidAndPreservesStringsAndIntegers" end time: Oct 12 09:34 BST
+"Cli.JsonIsValidAndPreservesStringsAndIntegers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/44 Testing: Cli.SemanticDiffIncludesHealthInventoryAndSchema
+36/44 Test: Cli.SemanticDiffIncludesHealthInventoryAndSchema
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Cli.SemanticDiffIncludesHealthInventoryAndSchema" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Cli.SemanticDiffIncludesHealthInventoryAndSchema" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Cli.SemanticDiffIncludesHealthInventoryAndSchema
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Cli
+[ RUN      ] Cli.SemanticDiffIncludesHealthInventoryAndSchema
+[       OK ] Cli.SemanticDiffIncludesHealthInventoryAndSchema (0 ms)
+[----------] 1 test from Cli (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Cli.SemanticDiffIncludesHealthInventoryAndSchema" end time: Oct 12 09:34 BST
+"Cli.SemanticDiffIncludesHealthInventoryAndSchema" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/44 Testing: Cli.CompleteMigrationWorkflow
+37/44 Test: Cli.CompleteMigrationWorkflow
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Cli.CompleteMigrationWorkflow" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Cli.CompleteMigrationWorkflow" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Cli.CompleteMigrationWorkflow
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Cli
+[ RUN      ] Cli.CompleteMigrationWorkflow
+[       OK ] Cli.CompleteMigrationWorkflow (0 ms)
+[----------] 1 test from Cli (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Cli.CompleteMigrationWorkflow" end time: Oct 12 09:34 BST
+"Cli.CompleteMigrationWorkflow" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/44 Testing: Cli.ErrorCodesAndOffsetContext
+38/44 Test: Cli.ErrorCodesAndOffsetContext
+Command: "<project>/build/release/chronicle_tests" "--gtest_filter=Cli.ErrorCodesAndOffsetContext" "--gtest_also_run_disabled_tests"
+Directory: <project>/build/release
+"Cli.ErrorCodesAndOffsetContext" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Running main() from <project>/build/release/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Cli.ErrorCodesAndOffsetContext
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Cli
+[ RUN      ] Cli.ErrorCodesAndOffsetContext
+[       OK ] Cli.ErrorCodesAndOffsetContext (0 ms)
+[----------] 1 test from Cli (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Cli.ErrorCodesAndOffsetContext" end time: Oct 12 09:34 BST
+"Cli.ErrorCodesAndOffsetContext" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/44 Testing: benchmark_allocation_tracking
+39/44 Test: benchmark_allocation_tracking
+Command: "<project>/build/release/chronicle_benchmark" "--check-allocations"
+Directory: <project>/build/release
+"benchmark_allocation_tracking" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"benchmark_allocation_tracking" end time: Oct 12 09:34 BST
+"benchmark_allocation_tracking" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/44 Testing: cli_validate_v1
+40/44 Test: cli_validate_v1
+Command: "<project>/build/release/chronicle" "validate" "<project>/tests/golden/scene_v1.bin"
+Directory: <project>/build/release
+"cli_validate_v1" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Valid: format=1 Player V1
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"cli_validate_v1" end time: Oct 12 09:34 BST
+"cli_validate_v1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/44 Testing: cli_validate_v2
+41/44 Test: cli_validate_v2
+Command: "<project>/build/release/chronicle" "validate" "<project>/tests/golden/scene_v2.bin"
+Directory: <project>/build/release
+"cli_validate_v2" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Valid: format=1 Player V2
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"cli_validate_v2" end time: Oct 12 09:34 BST
+"cli_validate_v2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/44 Testing: demo_save
+42/44 Test: demo_save
+Command: "<project>/build/release/scene_demo" "save" "<project>/build/release/demo.bin"
+Directory: <project>/build/release
+"demo_save" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Saved Player V2
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"demo_save" end time: Oct 12 09:34 BST
+"demo_save" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/44 Testing: demo_load
+43/44 Test: demo_load
+Command: "<project>/build/release/scene_demo" "load" "<project>/build/release/demo.bin"
+Directory: <project>/build/release
+"demo_load" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+Meadow: Ada, health=100, inventory=2
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"demo_load" end time: Oct 12 09:34 BST
+"demo_load" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/44 Testing: cli_workflow
+44/44 Test: cli_workflow
+Command: "/opt/homebrew/bin/cmake" "-DCLI=<project>/build/release/chronicle" "-DGOLDEN_DIR=<project>/tests/golden" "-DWORK_DIR=<project>/build/release/cli-workflow" "-P" "<project>/tests/cli_workflow.cmake"
+Directory: <project>/build/release
+"cli_workflow" start time: Oct 12 09:34 BST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"cli_workflow" end time: Oct 12 09:34 BST
+"cli_workflow" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 12 09:34 BST

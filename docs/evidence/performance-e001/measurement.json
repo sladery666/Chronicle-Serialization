@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-12",
+  "environment": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83",
+  "architecture": "arm64",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "build": "Release",
+  "seed": 20261011,
+  "samples_per_operation": 31,
+  "items": [
+    10,
+    1000,
+    10000,
+    100000
+  ],
+  "measurement": "one warmup, 31 timed samples, then one separate tracked sample; includes correctness checks and result destruction",
+  "memory": "C++ operator new requested bytes; excludes existing input, malloc-only library allocations, stack, allocator overhead and RSS",
+  "timing_caveat": "benchmark-only allocation wrapper remains linked in timed runs, with counting disabled; both versions use the same wrapper",
+  "source_sha256": {
+    "include/chronicle/binary_reader.hpp": {
+      "before": "8699312f02f81d2bfa4d61a8b72566079ba3c97f7d65b1826cfca68ba4639ef1",
+      "after": "8699312f02f81d2bfa4d61a8b72566079ba3c97f7d65b1826cfca68ba4639ef1"
+    },
+    "include/chronicle/binary_writer.hpp": {
+      "before": "0603bf50cdfe57ccb506420c2738da742dad7a3ba38d301068f952ad65936808",
+      "after": "f3c341b1fac6ee52264659b88706638dcd0478ba51ea9cbb6c36b83f9d2bac71"
+    },
+    "include/chronicle/byte_buffer.hpp": {
+      "before": "bc4b26e775942f88488c0d4e00738babc7974e0d26ecfbe00b4deb2987996dec",
+      "after": "df2e3c6a1d0b7baac272a7fc378f56788c21232652ab764a81ae1c6d3785e2eb"
+    },
+    "include/chronicle/migration.hpp": {
+      "before": "c51e8a80e9d23fcbc354209fc847a7c5276242f5214359bbfb86427f44fc04b3",
+      "after": "c51e8a80e9d23fcbc354209fc847a7c5276242f5214359bbfb86427f44fc04b3"
+    },
+    "include/chronicle/result.hpp": {
+      "before": "7c1e459e6fb825adc0d0c8e12ac1ec83f21aa9a4b7e47c0f62882fbd39f79449",
+      "after": "7c1e459e6fb825adc0d0c8e12ac1ec83f21aa9a4b7e47c0f62882fbd39f79449"
+    },
+    "include/chronicle/scene.hpp": {
+      "before": "e324730ad9d81529b6afe564c4e3f285164746cf33191a55a49f76242648a3f2",
+      "after": "e324730ad9d81529b6afe564c4e3f285164746cf33191a55a49f76242648a3f2"
+    },
+    "include/chronicle/schema.hpp": {
+      "before": "bf0463fc8d3a3d907b9de21abecc26613a5ec6058d891eb6777f1f42a37327b7",
+      "after": "40d3fa51ce595e7c21cc534827a1750034adf9060ae09eb908bcb63e0e17dea3"
+    },
+    "include/chronicle/serialization.hpp": {
+      "before": "4e3fc272c48e26137954425e87775c6dc1abc854273c39b76588c6a84612cbf2",
+      "after": "4e3fc272c48e26137954425e87775c6dc1abc854273c39b76588c6a84612cbf2"
+    },
+    "src/binary.cpp": {
+      "before": "a477e1f5619b71c59f71359b3d13ead5155c3147e618a358b2055eded74b4b7e",
+      "after": "1eee06127e97a6470d51996cead69cc0f4d0c8424afc2e4c55e40b7e4847f991"
+    },
+    "src/file.cpp": {
+      "before": "3ee9586124431069014d4b9afcc1e9c46e21986b7f97ac4beab374b0a5d642c4",
+      "after": "d0f0d7beb6e9a3775069465bafe4440f3b308bf548d510b56c430d8a0ce647e7"
+    },
+    "src/migration.cpp": {
+      "before": "69e51fd17d7a103d3c729f97d89c0da743ed2cd2fd18216a7849f69fdf61ed06",
+      "after": "69e51fd17d7a103d3c729f97d89c0da743ed2cd2fd18216a7849f69fdf61ed06"
+    },
+    "src/schema.cpp": {
+      "before": "dc021de7ac00984d73763d1bb6fe30fa4656421af4af4b097be487bf5e3b42b7",
+      "after": "c10a2c5772c985b629ce7120661812c128d1634cb1391b122f7d0890f93ce7a6"
+    },
+    "src/serialization.cpp": {
+      "before": "cb13ddadd6745fedc0532d4445bed51ea9debb3e20effc333954190b18052edc",
+      "after": "95fc7ccd626a4454cf72ffc6449940045f990b576a684a52c1ff333a19ef5e08"
+    },
+    "tools/cli/commands.cpp": {
+      "before": "69c4eb193afe4d0edd9a66b6cda7428ebd9d69b8e180a083d6fd8ebee3e8729a",
+      "after": "69c4eb193afe4d0edd9a66b6cda7428ebd9d69b8e180a083d6fd8ebee3e8729a"
+    },
+    "tools/cli/commands.hpp": {
+      "before": "2a41783df86d2f80b0065921c0ab8475a9210a15bfdf83c03cd60d026a983061",
+      "after": "2a41783df86d2f80b0065921c0ab8475a9210a15bfdf83c03cd60d026a983061"
+    },
+    "tools/cli/main.cpp": {
+      "before": "75d1ea43193893e4d8b0bffff43d8e0c2d539673966e68cd5b7fdec155d54b7c",
+      "after": "75d1ea43193893e4d8b0bffff43d8e0c2d539673966e68cd5b7fdec155d54b7c"
+    },
+    "tools/cli/output.cpp": {
+      "before": "8756475f9627cdc1e7228d1d8ce935d578b5b2a296f3eeed7ea40da27a80b75e",
+      "after": "79ace9cd8ba109fc1e176be232fb653d747243d223d329ae1ec483ad6ed4c6a7"
+    }
+  },
+  "benchmark_sha256": {
+    "benchmarks/allocation_tracking.cpp": "2a97118ef76f1e1c5276760ae3e6e8506b2160a2e27b99f1adc43478f863bdbb",
+    "benchmarks/allocation_tracking.hpp": "b62af5810e7df6e3f1af3cf0d00beb9deb3fe44a66571d1629537761df63f06c",
+    "benchmarks/main.cpp": "4b1ef9044634309479cb44c24d08a3300814e1ac5130360c24aaab8777d0ad17"
+  }
+}

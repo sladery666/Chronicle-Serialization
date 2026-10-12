@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-12",
+  "ctest": {
+    "debug": {
+      "passed": 60,
+      "failed": 0
+    },
+    "release": {
+      "passed": 60,
+      "failed": 0
+    },
+    "sanitizers": {
+      "passed": 60,
+      "failed": 0
+    }
+  },
+  "formatting": "clang-format --dry-run --Werror passed",
+  "compile_contracts": "unsupported member and wrong owner rejected as expected",
+  "golden_files": "Scene V1 and V2 byte equality passed",
+  "remote_ci": "not executed",
+  "performance_method": "unchanged E001 benchmark, Release, 10000 items, seed 20261011, 31 timed samples and separate allocation sample; warm cache; operation includes validation/destruction; requested bytes are not RSS",
+  "source_sha256": {
+    "include/chronicle/archive.hpp": {
+      "before": null,
+      "after": "1547bbe92fb3e980d466948e0ea351132f9b1b5f4135579187471e88c094a875"
+    },
+    "include/chronicle/scene_bindings.hpp": {
+      "before": null,
+      "after": "5e3bc6ef9f935824e892438a55580e7a12bda37cbc0b8955cac947e6c9d3d7d3"
+    },
+    "include/chronicle/serialization.hpp": {
+      "before": "4e3fc272c48e26137954425e87775c6dc1abc854273c39b76588c6a84612cbf2",
+      "after": "9c089e85ce66aa7761a6bc285069c988b082acbd124fae1cd750a4872d996761"
+    },
+    "include/chronicle/type_binding.hpp": {
+      "before": null,
+      "after": "a6fcb02fccd2786be463892e460abc66a6c8f782cf80d64d97f673c500ae56b1"
+    },
+    "include/chronicle/schema.hpp": {
+      "before": "40d3fa51ce595e7c21cc534827a1750034adf9060ae09eb908bcb63e0e17dea3",
+      "after": "9633057d63a8863efe8dd0db86895791fbdd98f75bd87d4ea19b19fe9c92ef56"
+    },
+    "include/chronicle/bound_serialization.hpp": {
+      "before": null,
+      "after": "53bd2aa985a072919cff0603646bc6c71675d071692a44b4534e2610a2728fd3"
+    },
+    "src/schema.cpp": {
+      "before": "c10a2c5772c985b629ce7120661812c128d1634cb1391b122f7d0890f93ce7a6",
+      "after": "e7b5c4a4e55b177f6954714cf5c5dbb7dd3f85ef019ee2c551420b105a457dbf"
+    },
+    "src/serialization.cpp": {
+      "before": "95fc7ccd626a4454cf72ffc6449940045f990b576a684a52c1ff333a19ef5e08",
+      "after": "d2097f206fd6ed6c6346ee312c056c292573f81dbe0c5ba54fe14019435ebeb5"
+    },
+    "src/archive.cpp": {
+      "before": null,
+      "after": "3949702f876f7818ebec724e198282f6aec7f53abfc8aa811b09277eeba80627"
+    },
+    "tools/cli/output.cpp": {
+      "before": "79ace9cd8ba109fc1e176be232fb653d747243d223d329ae1ec483ad6ed4c6a7",
+      "after": "6afef5ff8393550b7c4853a7d278b94222e32c2d6f99aae1eb31c76287f03883"
+    },
+    "tools/cli/commands.hpp": {
+      "before": "2a41783df86d2f80b0065921c0ab8475a9210a15bfdf83c03cd60d026a983061",
+      "after": "19a87f5970dd271488071b09ec19ae3ded5c0d38bd0e7152c41e99206dcdaaef"
+    },
+    "examples/type_binding_demo/model.hpp": {
+      "before": null,
+      "after": "8d4cbd6065acb9fe800173a1b5de045654e1f26e509c4de5c79f4b80d1cc9302"
+    },
+    "examples/type_binding_demo/main.cpp": {
+      "before": null,
+      "after": "dc1fbc76b8dd75aa732e426e55898059e74201363661a0b3dffc0c4a35776e48"
+    },
+    "tests/binding_tests.cpp": {
+      "before": null,
+      "after": "1d02ddedfa7857e427cf872a317845fdf3e2c6ca5954e56c23c6df7e1ca73abf"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+#include "chronicle/type_binding.hpp"
+struct Unsupported {
+    bool flag = false;
+};
+constexpr auto invalid = chronicle::bindField(1, "flag", &Unsupported::flag);
+
+--- Expected compile rejection ---
+<stdin>:5:26: error: no matching function for call to 'bindField'
+    5 | constexpr auto invalid = chronicle::bindField(1, "flag", &Unsupported::flag);
+      |                          ^~~~~~~~~~~~~~~~~~~~
+include/chronicle/type_binding.hpp:60:31: note: candidate template ignored: constraints not satisfied [with O = Unsupported, M = bool]
+   60 | constexpr MemberBinding<O, M> bindField(FieldId id, std::string_view name,
+      |                               ^
+include/chronicle/type_binding.hpp:59:23: note: because 'bool' does not satisfy 'BoundValue'
+   59 | template <typename O, BoundValue M>
+      |                       ^
+include/chronicle/type_binding.hpp:46:22: note: because 'binding_detail::supported<bool>()' evaluated to false
+   46 | concept BoundValue = binding_detail::supported<T>();
+      |                      ^
+1 error generated.

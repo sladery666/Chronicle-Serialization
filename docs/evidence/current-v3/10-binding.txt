@@ -1,0 +1,24 @@
+$ ./build/debug/type_binding_demo save "$DEMO_DIR"/world.bin
+Saved WorldSettings schema=1
+[exit 0]
+
+$ ./build/debug/type_binding_demo load "$DEMO_DIR"/world.bin
+WorldSettings seed=20261012 difficulty=Hard quest=Find the archive progress=3 checkpoints=2 rewards=1
+[exit 0]
+
+$ ./build/debug/type_binding_demo inspect "$DEMO_DIR"/world.bin
+WorldSettings type=11 schema=1 offset=0x18
+  seed id=1 wire=1 size=8 offset=0x30
+  difficulty id=2 wire=5 size=8 offset=0x48
+  quest id=3 wire=6 size=132 offset=0x60
+    QuestState type=10 schema=1 offset=0x60
+      id id=1 wire=1 size=8 offset=0x78
+      title id=2 wire=5 size=20 offset=0x90
+      progress id=3 wire=2 size=4 offset=0xb4
+      checkpoints id=4 wire=7 size=28 offset=0xc8
+        elements=2
+  rewards id=4 wire=7 size=70 offset=0xf4
+    Item type=4 schema=1 offset=0x100
+      id id=1 wire=1 size=8 offset=0x118
+      name id=2 wire=5 size=10 offset=0x130
+[exit 0]

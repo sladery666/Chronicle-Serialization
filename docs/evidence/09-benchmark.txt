@@ -1,0 +1,23 @@
+$ sw_vers
+ProductName:		macOS
+ProductVersion:		26.6.2
+BuildVersion:		25G83
+[exit 0]
+
+$ uname -m
+arm64
+[exit 0]
+
+$ ./build/release/chronicle_benchmark
+compiler=Clang 21.0.0 (clang-2100.3.34.2)
+build=Release
+os=macOS
+architecture=arm64
+hardware_threads=10
+file_io=warm_cache
+save_median_ms=14.5216
+load_median_ms=2.44404
+seed=20261011 items=10000 samples=31 bytes=747719
+encode_median_ms=13.7046
+decode_median_ms=2.28975
+[exit 0]

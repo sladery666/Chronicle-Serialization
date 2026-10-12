@@ -1,0 +1,19 @@
+$ shasum -a 256 "$DEMO_DIR"/scene_v1.bin
+2b5fd2bb0039139c28a42bd66ca1488547477b7bd965f1a4617a991609cca92c  $DEMO_DIR/scene_v1.bin
+[exit 0]
+
+$ ./build/debug/chronicle migrate "$DEMO_DIR"/scene_v1.bin "$DEMO_DIR"/scene_migrated.bin
+Migrated Player V1 -> V2: $DEMO_DIR/scene_migrated.bin
+[exit 0]
+
+$ ./build/debug/chronicle validate "$DEMO_DIR"/scene_migrated.bin
+Valid: format=1 Player V2
+[exit 0]
+
+$ ./build/debug/scene_demo load "$DEMO_DIR"/scene_migrated.bin
+Meadow: Unknown, health=100, inventory=2
+[exit 0]
+
+$ shasum -a 256 "$DEMO_DIR"/scene_v1.bin
+2b5fd2bb0039139c28a42bd66ca1488547477b7bd965f1a4617a991609cca92c  $DEMO_DIR/scene_v1.bin
+[exit 0]

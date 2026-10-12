@@ -1,0 +1,27 @@
+$ ./build/debug/chronicle validate tests/golden/bad_magic.bin
+header.magic at offset 0x0: expected CHRNLITE
+[exit 2]
+
+$ ./build/debug/chronicle validate tests/golden/truncated.bin
+header.payload at offset 0x18: payload exceeds remaining input
+[exit 2]
+
+$ ./build/debug/chronicle validate "$DEMO_DIR"/missing.bin
+$DEMO_DIR/missing.bin at offset 0x0: cannot open file for reading
+[exit 3]
+
+$ ./build/debug/chronicle validate "$DEMO_DIR"/unsupported.bin
+header.version at offset 0x8: unsupported file format version
+[exit 4]
+
+$ ./build/debug/chronicle migrate "$DEMO_DIR"/scene_v1.bin "$DEMO_DIR"/scene_migrated.bin
+$DEMO_DIR/scene_migrated.bin at offset 0x0: cannot install completed file: File exists
+[exit 3]
+
+$ ./build/debug/chronicle migrate "$DEMO_DIR"/scene_v3.bin "$DEMO_DIR"/same.bin
+migration at offset 0x0: only forward upgrades are supported; source is already at or above target
+[exit 4]
+
+$ ./build/debug/chronicle validate "$DEMO_DIR"/scene_migrated.bin
+Valid: format=1 Player V3
+[exit 0]

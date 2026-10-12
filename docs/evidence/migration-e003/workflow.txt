@@ -1,0 +1,99 @@
+$ ./build/debug/scene_demo save $DEMO_DIR/scene_v1.bin 1
+Saved Player V1
+[exit 0]
+
+$ ./build/debug/scene_demo save $DEMO_DIR/scene_v2.bin 2
+Saved Player V2
+[exit 0]
+
+$ ./build/debug/scene_demo save $DEMO_DIR/scene_v3.bin 3
+Saved Player V3
+[exit 0]
+
+$ ./build/debug/chronicle migrate $DEMO_DIR/scene_v1.bin $DEMO_DIR/direct.bin
+Migrated to Player V3: $DEMO_DIR/direct.bin
+[exit 0]
+
+$ ./build/debug/chronicle migrate $DEMO_DIR/scene_v1.bin $DEMO_DIR/middle.bin --to-version 2
+Migrated to Player V2: $DEMO_DIR/middle.bin
+[exit 0]
+
+$ ./build/debug/chronicle migrate $DEMO_DIR/middle.bin $DEMO_DIR/staged.bin --to-version 3
+Migrated to Player V3: $DEMO_DIR/staged.bin
+[exit 0]
+
+$ cmp $DEMO_DIR/direct.bin $DEMO_DIR/staged.bin
+[exit 0]
+
+$ ./build/debug/chronicle inspect $DEMO_DIR/direct.bin
+Chronicle Lite format=1 root=Scene
+Scene type=1 schema=1 offset=0x18
+  name id=1 wire=5 size=10 offset=0x30
+  player id=2 wire=6 size=366 offset=0x4a
+    Player type=2 schema=3 offset=0x4a
+      id id=1 wire=1 size=8 offset=0x62
+      name id=2 wire=5 size=11 offset=0x7a
+      position id=4 wire=6 size=68 offset=0x95
+        Vec3 type=3 schema=1 offset=0x95
+          x id=1 wire=4 size=4 offset=0xad
+          y id=2 wire=4 size=4 offset=0xc1
+          z id=3 wire=4 size=4 offset=0xd5
+      inventory id=5 wire=7 size=135 offset=0xe9
+        Item type=4 schema=1 offset=0xf5
+          id id=1 wire=1 size=8 offset=0x10d
+          name id=2 wire=5 size=9 offset=0x125
+        Item type=4 schema=1 offset=0x136
+          id id=1 wire=1 size=8 offset=0x14e
+          name id=2 wire=5 size=10 offset=0x166
+      stats id=6 wire=6 size=56 offset=0x180
+        Stats type=5 schema=1 offset=0x180
+          health id=1 wire=3 size=8 offset=0x198
+          maxHealth id=2 wire=3 size=8 offset=0x1b0
+[exit 0]
+
+$ ./build/debug/chronicle validate $DEMO_DIR/direct.bin
+Valid: format=1 Player V3
+[exit 0]
+
+$ ./build/debug/chronicle diff $DEMO_DIR/middle.bin $DEMO_DIR/direct.bin
+player.schema: 2 -> 3
+player.health: field moved -> player.stats.health
+player.stats.maxHealth: field added, value = 100
+[exit 1]
+
+$ ./build/debug/chronicle to-json $DEMO_DIR/direct.bin
+{
+  "name": "Meadow",
+  "player": {
+    "id": 42,
+    "name": "Unknown",
+    "stats": {
+      "health": 100,
+      "maxHealth": 100
+    },
+    "position": {
+      "x": 1.5,
+      "y": -2.0,
+      "z": 3.25
+    },
+    "inventory": [
+      {
+        "id": 7,
+        "name": "Sword"
+      },
+      {
+        "id": 8,
+        "name": "Potion"
+      }
+    ]
+  }
+}
+[exit 0]
+
+$ ./build/debug/chronicle migrate $DEMO_DIR/staged.bin $DEMO_DIR/identity.bin
+migration at offset 0x0: only forward upgrades are supported; source is already at or above target
+[exit 4]
+
+$ ./build/debug/chronicle migrate $DEMO_DIR/scene_v2.bin $DEMO_DIR/direct.bin
+$DEMO_DIR/direct.bin at offset 0x0: cannot install completed file: File exists
+[exit 3]

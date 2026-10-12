@@ -1,0 +1,28 @@
+$ ./build/debug/chronicle to-json "$DEMO_DIR"/scene_migrated.bin
+{
+  "name": "Meadow",
+  "player": {
+    "id": 42,
+    "name": "Unknown",
+    "stats": {
+      "health": 100,
+      "maxHealth": 100
+    },
+    "position": {
+      "x": 1.5,
+      "y": -2.0,
+      "z": 3.25
+    },
+    "inventory": [
+      {
+        "id": 7,
+        "name": "Sword"
+      },
+      {
+        "id": 8,
+        "name": "Potion"
+      }
+    ]
+  }
+}
+[exit 0]

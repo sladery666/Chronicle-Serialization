@@ -1,0 +1,19 @@
+{
+  "ctest": {
+    "debug": {
+      "passed": 44,
+      "failed": 0
+    },
+    "release": {
+      "passed": 44,
+      "failed": 0
+    },
+    "sanitizers": {
+      "passed": 44,
+      "failed": 0
+    }
+  },
+  "formatting": "clang-format --dry-run --Werror: passed",
+  "golden_files": "V1/V2 deterministic byte equality tests: passed",
+  "remote_ci": "not executed"
+}

@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-12",
+  "demo_directory": "build/demo/v3.sssjgafk",
+  "source_sha256": "2b5fd2bb0039139c28a42bd66ca1488547477b7bd965f1a4617a991609cca92c",
+  "direct_and_staged_identical": true,
+  "records": [
+    {
+      "command": "./build/debug/scene_demo save $DEMO_DIR/scene_v1.bin 1",
+      "exit_code": 0,
+      "output": "Saved Player V1\n"
+    },
+    {
+      "command": "./build/debug/scene_demo save $DEMO_DIR/scene_v2.bin 2",
+      "exit_code": 0,
+      "output": "Saved Player V2\n"
+    },
+    {
+      "command": "./build/debug/scene_demo save $DEMO_DIR/scene_v3.bin 3",
+      "exit_code": 0,
+      "output": "Saved Player V3\n"
+    },
+    {
+      "command": "./build/debug/chronicle migrate $DEMO_DIR/scene_v1.bin $DEMO_DIR/direct.bin",
+      "exit_code": 0,
+      "output": "Migrated to Player V3: $DEMO_DIR/direct.bin\n"
+    },
+    {
+      "command": "./build/debug/chronicle migrate $DEMO_DIR/scene_v1.bin $DEMO_DIR/middle.bin --to-version 2",
+      "exit_code": 0,
+      "output": "Migrated to Player V2: $DEMO_DIR/middle.bin\n"
+    },
+    {
+      "command": "./build/debug/chronicle migrate $DEMO_DIR/middle.bin $DEMO_DIR/staged.bin --to-version 3",
+      "exit_code": 0,
+      "output": "Migrated to Player V3: $DEMO_DIR/staged.bin\n"
+    },
+    {
+      "command": "cmp $DEMO_DIR/direct.bin $DEMO_DIR/staged.bin",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "./build/debug/chronicle inspect $DEMO_DIR/direct.bin",
+      "exit_code": 0,
+      "output": "Chronicle Lite format=1 root=Scene\nScene type=1 schema=1 offset=0x18\n  name id=1 wire=5 size=10 offset=0x30\n  player id=2 wire=6 size=366 offset=0x4a\n    Player type=2 schema=3 offset=0x4a\n      id id=1 wire=1 size=8 offset=0x62\n      name id=2 wire=5 size=11 offset=0x7a\n      position id=4 wire=6 size=68 offset=0x95\n        Vec3 type=3 schema=1 offset=0x95\n          x id=1 wire=4 size=4 offset=0xad\n          y id=2 wire=4 size=4 offset=0xc1\n          z id=3 wire=4 size=4 offset=0xd5\n      inventory id=5 wire=7 size=135 offset=0xe9\n        Item type=4 schema=1 offset=0xf5\n          id id=1 wire=1 size=8 offset=0x10d\n          name id=2 wire=5 size=9 offset=0x125\n        Item type=4 schema=1 offset=0x136\n          id id=1 wire=1 size=8 offset=0x14e\n          name id=2 wire=5 size=10 offset=0x166\n      stats id=6 wire=6 size=56 offset=0x180\n        Stats type=5 schema=1 offset=0x180\n          health id=1 wire=3 size=8 offset=0x198\n          maxHealth id=2 wire=3 size=8 offset=0x1b0\n"
+    },
+    {
+      "command": "./build/debug/chronicle validate $DEMO_DIR/direct.bin",
+      "exit_code": 0,
+      "output": "Valid: format=1 Player V3\n"
+    },
+    {
+      "command": "./build/debug/chronicle diff $DEMO_DIR/middle.bin $DEMO_DIR/direct.bin",
+      "exit_code": 1,
+      "output": "player.schema: 2 -> 3\nplayer.health: field moved -> player.stats.health\nplayer.stats.maxHealth: field added, value = 100\n"
+    },
+    {
+      "command": "./build/debug/chronicle to-json $DEMO_DIR/direct.bin",
+      "exit_code": 0,
+      "output": "{\n  \"name\": \"Meadow\",\n  \"player\": {\n    \"id\": 42,\n    \"name\": \"Unknown\",\n    \"stats\": {\n      \"health\": 100,\n      \"maxHealth\": 100\n    },\n    \"position\": {\n      \"x\": 1.5,\n      \"y\": -2.0,\n      \"z\": 3.25\n    },\n    \"inventory\": [\n      {\n        \"id\": 7,\n        \"name\": \"Sword\"\n      },\n      {\n        \"id\": 8,\n        \"name\": \"Potion\"\n      }\n    ]\n  }\n}\n"
+    },
+    {
+      "command": "./build/debug/chronicle migrate $DEMO_DIR/staged.bin $DEMO_DIR/identity.bin",
+      "exit_code": 4,
+      "output": "migration at offset 0x0: only forward upgrades are supported; source is already at or above target\n"
+    },
+    {
+      "command": "./build/debug/chronicle migrate $DEMO_DIR/scene_v2.bin $DEMO_DIR/direct.bin",
+      "exit_code": 3,
+      "output": "$DEMO_DIR/direct.bin at offset 0x0: cannot install completed file: File exists\n"
+    }
+  ]
+}

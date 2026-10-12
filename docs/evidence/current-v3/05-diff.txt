@@ -1,0 +1,14 @@
+$ ./build/debug/chronicle diff "$DEMO_DIR"/scene_v2.bin "$DEMO_DIR"/scene_migrated.bin
+player.schema: 2 -> 3
+player.health: field moved -> player.stats.health
+player.stats.maxHealth: field added, value = 100
+player.name: "Ada" -> "Unknown"
+[exit 1]
+
+$ ./build/debug/chronicle diff "$DEMO_DIR"/scene_migrated.bin "$DEMO_DIR"/scene_v3.bin
+player.name: "Unknown" -> "Ada"
+[exit 1]
+
+$ ./build/debug/chronicle diff "$DEMO_DIR"/scene_v3.bin "$DEMO_DIR"/scene_v3_repeat.bin
+No semantic differences
+[exit 0]

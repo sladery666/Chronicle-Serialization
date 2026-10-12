@@ -1,0 +1,162 @@
+$ cmake --preset debug
+-- Using the multi-header code from <project>/build/debug/_deps/json-src/include/
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: <project>/build/debug
+[exit 0]
+
+$ cmake --build --preset debug --parallel 2
+ninja: no work to do.
+[exit 0]
+
+$ ctest --preset debug
+Test project <project>/build/debug
+      Start  1: Result.MoveOnlyValueAndError
+ 1/72 Test  #1: Result.MoveOnlyValueAndError ....................................   Passed    0.01 sec
+      Start  2: ByteBuffer.EmptyAndSelfAppend
+ 2/72 Test  #2: ByteBuffer.EmptyAndSelfAppend ...................................   Passed    0.01 sec
+      Start  3: ByteBuffer.ExternalOwnershipAndPartialSelfAppend
+ 3/72 Test  #3: ByteBuffer.ExternalOwnershipAndPartialSelfAppend ................   Passed    0.01 sec
+      Start  4: ByteBuffer.AdoptsMovedStorage
+ 4/72 Test  #4: ByteBuffer.AdoptsMovedStorage ...................................   Passed    0.01 sec
+      Start  5: Binary.KnownLittleEndianBytes
+ 5/72 Test  #5: Binary.KnownLittleEndianBytes ...................................   Passed    0.01 sec
+      Start  6: Binary.ExtremesAndSignedFloats
+ 6/72 Test  #6: Binary.ExtremesAndSignedFloats ..................................   Passed    0.01 sec
+      Start  7: Binary.StringsUtf8AndEmbeddedNull
+ 7/72 Test  #7: Binary.StringsUtf8AndEmbeddedNull ...............................   Passed    0.01 sec
+      Start  8: Binary.BoundsOverflowAndFailureDoesNotAdvance
+ 8/72 Test  #8: Binary.BoundsOverflowAndFailureDoesNotAdvance ...................   Passed    0.01 sec
+      Start  9: Binary.StringLimitsAndTrailingBytes
+ 9/72 Test  #9: Binary.StringLimitsAndTrailingBytes .............................   Passed    0.01 sec
+      Start 10: Binary.ReserveKeepsLimitAndBytes
+10/72 Test #10: Binary.ReserveKeepsLimitAndBytes ................................   Passed    0.68 sec
+      Start 11: Scene.DeterministicRoundTripAndGoldenV2
+11/72 Test #11: Scene.DeterministicRoundTripAndGoldenV2 .........................   Passed    0.01 sec
+      Start 12: Scene.EmptyAndLargeIntegersRoundTrip
+12/72 Test #12: Scene.EmptyAndLargeIntegersRoundTrip ............................   Passed    0.01 sec
+      Start 13: Scene.RejectNonFiniteOverflowAndUnsupportedVersions
+13/72 Test #13: Scene.RejectNonFiniteOverflowAndUnsupportedVersions .............   Passed    0.01 sec
+      Start 14: Compatibility.GoldenV1WideningAndDefaultName
+14/72 Test #14: Compatibility.GoldenV1WideningAndDefaultName ....................   Passed    0.01 sec
+      Start 15: Compatibility.MissingFieldsUseDefaults
+15/72 Test #15: Compatibility.MissingFieldsUseDefaults ..........................   Passed    0.01 sec
+      Start 16: Compatibility.UnknownFieldsAndWireTypesAreSkipped
+16/72 Test #16: Compatibility.UnknownFieldsAndWireTypesAreSkipped ...............   Passed    0.01 sec
+      Start 17: Schema.RegistrationValidationAndCanonicalOrder
+17/72 Test #17: Schema.RegistrationValidationAndCanonicalOrder ..................   Passed    0.01 sec
+      Start 18: Malformed.EveryTruncationIsRejected
+18/72 Test #18: Malformed.EveryTruncationIsRejected .............................   Passed    0.01 sec
+      Start 19: Malformed.HeaderVersionsLengthsAndTrailingBytes
+19/72 Test #19: Malformed.HeaderVersionsLengthsAndTrailingBytes .................   Passed    0.01 sec
+      Start 20: Malformed.FieldWireDuplicateFlagsAndSchemaVersions
+20/72 Test #20: Malformed.FieldWireDuplicateFlagsAndSchemaVersions ..............   Passed    0.01 sec
+      Start 21: Malformed.StringsArraysAndScalarPayloadLengths
+21/72 Test #21: Malformed.StringsArraysAndScalarPayloadLengths ..................   Passed    0.01 sec
+      Start 22: Malformed.SeededMutationSmoke
+22/72 Test #22: Malformed.SeededMutationSmoke ...................................   Passed    0.04 sec
+      Start 23: Malformed.NestedInvalidLengthsUtf8AndNaN
+23/72 Test #23: Malformed.NestedInvalidLengthsUtf8AndNaN ........................   Passed    0.01 sec
+      Start 24: Ownership.BorrowedRecordsAndOwnedSnapshot
+24/72 Test #24: Ownership.BorrowedRecordsAndOwnedSnapshot .......................   Passed    0.01 sec
+      Start 25: Ownership.LoadedSceneOutlivesInputAndCopyMove
+25/72 Test #25: Ownership.LoadedSceneOutlivesInputAndCopyMove ...................   Passed    0.01 sec
+      Start 26: Ownership.MaximumFieldCountAndLateDuplicate
+26/72 Test #26: Ownership.MaximumFieldCountAndLateDuplicate .....................   Passed    0.01 sec
+      Start 27: File.SaveLoadAndAtomicReplacement
+27/72 Test #27: File.SaveLoadAndAtomicReplacement ...............................   Passed    0.01 sec
+      Start 28: File.MissingAndOversizedFiles
+28/72 Test #28: File.MissingAndOversizedFiles ...................................   Passed    0.01 sec
+      Start 29: Migration.V1ToV2SourcePreservedAndValidated
+29/72 Test #29: Migration.V1ToV2SourcePreservedAndValidated .....................   Passed    0.01 sec
+      Start 30: Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles
+30/72 Test #30: Migration.FailedWritesAndExistingDestinationDoNotDestroyFiles ...   Passed    0.01 sec
+      Start 31: Migration.AliasedDestinationIsRejected
+31/72 Test #31: Migration.AliasedDestinationIsRejected ..........................   Passed    0.01 sec
+      Start 32: Migration.InvalidSceneCannotReplaceValidSave
+32/72 Test #32: Migration.InvalidSceneCannotReplaceValidSave ....................   Passed    0.01 sec
+      Start 33: Cli.HelpUsageAndVersion
+33/72 Test #33: Cli.HelpUsageAndVersion .........................................   Passed    0.01 sec
+      Start 34: Cli.ValidateAndInspect
+34/72 Test #34: Cli.ValidateAndInspect ..........................................   Passed    0.01 sec
+      Start 35: Cli.JsonIsValidAndPreservesStringsAndIntegers
+35/72 Test #35: Cli.JsonIsValidAndPreservesStringsAndIntegers ...................   Passed    0.01 sec
+      Start 36: Cli.SemanticDiffIncludesHealthInventoryAndSchema
+36/72 Test #36: Cli.SemanticDiffIncludesHealthInventoryAndSchema ................   Passed    0.01 sec
+      Start 37: Cli.CompleteMigrationWorkflow
+37/72 Test #37: Cli.CompleteMigrationWorkflow ...................................   Passed    0.01 sec
+      Start 38: Cli.ErrorCodesAndOffsetContext
+38/72 Test #38: Cli.ErrorCodesAndOffsetContext ..................................   Passed    0.01 sec
+      Start 39: Binding.NewNestedTypesRoundTripAndOwnership
+39/72 Test #39: Binding.NewNestedTypesRoundTripAndOwnership .....................   Passed    0.01 sec
+      Start 40: Binding.MetadataDependencyRegistrationAndInspection
+40/72 Test #40: Binding.MetadataDependencyRegistrationAndInspection .............   Passed    0.01 sec
+      Start 41: Binding.ExistingSchemasGeneratedFromBindings
+41/72 Test #41: Binding.ExistingSchemasGeneratedFromBindings ....................   Passed    0.01 sec
+      Start 42: Binding.OutOfOrderBindingProducesCanonicalRecords
+42/72 Test #42: Binding.OutOfOrderBindingProducesCanonicalRecords ...............   Passed    0.01 sec
+      Start 43: Binding.MissingDefaultsUnknownFieldsAndEmptyObjects
+43/72 Test #43: Binding.MissingDefaultsUnknownFieldsAndEmptyObjects .............   Passed    0.01 sec
+      Start 44: Binding.DuplicateAndInvalidDescriptorsAreRejected
+44/72 Test #44: Binding.DuplicateAndInvalidDescriptorsAreRejected ...............   Passed    0.01 sec
+      Start 45: Binding.RegistrationCollisionLeavesRegistryUnchanged
+45/72 Test #45: Binding.RegistrationCollisionLeavesRegistryUnchanged ............   Passed    0.01 sec
+      Start 46: Binding.KnownWireWrongTypeAndFutureVersionRejected
+46/72 Test #46: Binding.KnownWireWrongTypeAndFutureVersionRejected ..............   Passed    0.01 sec
+      Start 47: Binding.ScalarArraysAndNestedArrays
+47/72 Test #47: Binding.ScalarArraysAndNestedArrays .............................   Passed    0.01 sec
+      Start 48: Binding.ArrayLengthsAndElementTrailingBytesRejected
+48/72 Test #48: Binding.ArrayLengthsAndElementTrailingBytesRejected .............   Passed    0.01 sec
+      Start 49: Binding.FloatStringAndVectorLimits
+49/72 Test #49: Binding.FloatStringAndVectorLimits ..............................   Passed    0.01 sec
+      Start 50: Binding.SaveLoadAndWrongRootFile
+50/72 Test #50: Binding.SaveLoadAndWrongRootFile ................................   Passed    0.01 sec
+      Start 51: Binding.EveryNewTypeTruncationRejected
+51/72 Test #51: Binding.EveryNewTypeTruncationRejected ..........................   Passed    0.01 sec
+      Start 52: V3.DefaultRoundTripAndIndependentGolden
+52/72 Test #52: V3.DefaultRoundTripAndIndependentGolden .........................   Passed    0.01 sec
+      Start 53: V3.LegacyGoldenLoadingAndWritingRemainCompatible
+53/72 Test #53: V3.LegacyGoldenLoadingAndWritingRemainCompatible ................   Passed    0.01 sec
+      Start 54: V3.ExplicitEdgesPreserveSignedBoundariesAndName
+54/72 Test #54: V3.ExplicitEdgesPreserveSignedBoundariesAndName .................   Passed    0.01 sec
+      Start 55: V3.DirectAndStagedMigrationProduceIdenticalBytes
+55/72 Test #55: V3.DirectAndStagedMigrationProduceIdenticalBytes ................   Passed    0.01 sec
+      Start 56: V3.InvalidStatsAndFutureSchemaAreRejected
+56/72 Test #56: V3.InvalidStatsAndFutureSchemaAreRejected .......................   Passed    0.01 sec
+      Start 57: V3.MissingDefaultsUnknownRetiredIdAndUnknownStatsFields
+57/72 Test #57: V3.MissingDefaultsUnknownRetiredIdAndUnknownStatsFields .........   Passed    0.01 sec
+      Start 58: V3.CustomMaxHealthRoundTripAndLossyProjectionRejected
+58/72 Test #58: V3.CustomMaxHealthRoundTripAndLossyProjectionRejected ...........   Passed    0.01 sec
+      Start 59: V3.IdentityDowngradeAndUnknownTargetsRejected
+59/72 Test #59: V3.IdentityDowngradeAndUnknownTargetsRejected ...................   Passed    0.01 sec
+      Start 60: V3.FileChainPreservesSourcesAndExistingTargets
+60/72 Test #60: V3.FileChainPreservesSourcesAndExistingTargets ..................   Passed    0.01 sec
+      Start 61: V3.MigrationFailuresLeaveNoDestinationOrTemporaryFiles
+61/72 Test #61: V3.MigrationFailuresLeaveNoDestinationOrTemporaryFiles ..........   Passed    0.01 sec
+      Start 62: V3.CliWorkflowShowsStructureJsonAndMigrationOptions
+62/72 Test #62: V3.CliWorkflowShowsStructureJsonAndMigrationOptions .............   Passed    0.01 sec
+      Start 63: benchmark_allocation_tracking
+63/72 Test #63: benchmark_allocation_tracking ...................................   Passed    0.00 sec
+      Start 64: cli_validate_v1
+64/72 Test #64: cli_validate_v1 .................................................   Passed    0.00 sec
+      Start 65: cli_validate_v3
+65/72 Test #65: cli_validate_v3 .................................................   Passed    0.00 sec
+      Start 66: cli_validate_v2
+66/72 Test #66: cli_validate_v2 .................................................   Passed    0.00 sec
+      Start 67: demo_save
+67/72 Test #67: demo_save .......................................................   Passed    0.00 sec
+      Start 68: demo_load
+68/72 Test #68: demo_load .......................................................   Passed    0.00 sec
+      Start 69: binding_demo_save
+69/72 Test #69: binding_demo_save ...............................................   Passed    0.00 sec
+      Start 70: binding_demo_load
+70/72 Test #70: binding_demo_load ...............................................   Passed    0.00 sec
+      Start 71: binding_demo_inspect
+71/72 Test #71: binding_demo_inspect ............................................   Passed    0.00 sec
+      Start 72: cli_workflow
+72/72 Test #72: cli_workflow ....................................................   Passed    0.05 sec
+
+100% tests passed out of 72
+
+Total Test time (real) =   1.26 sec
+[exit 0]

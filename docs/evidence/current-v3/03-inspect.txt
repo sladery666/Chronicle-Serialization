@@ -1,0 +1,37 @@
+$ ./build/debug/chronicle inspect "$DEMO_DIR"/scene_v3.bin
+Chronicle Lite format=1 root=Scene
+Scene type=1 schema=1 offset=0x18
+  name id=1 wire=5 size=10 offset=0x30
+  player id=2 wire=6 size=362 offset=0x4a
+    Player type=2 schema=3 offset=0x4a
+      id id=1 wire=1 size=8 offset=0x62
+      name id=2 wire=5 size=7 offset=0x7a
+      position id=4 wire=6 size=68 offset=0x91
+        Vec3 type=3 schema=1 offset=0x91
+          x id=1 wire=4 size=4 offset=0xa9
+          y id=2 wire=4 size=4 offset=0xbd
+          z id=3 wire=4 size=4 offset=0xd1
+      inventory id=5 wire=7 size=135 offset=0xe5
+        Item type=4 schema=1 offset=0xf1
+          id id=1 wire=1 size=8 offset=0x109
+          name id=2 wire=5 size=9 offset=0x121
+        Item type=4 schema=1 offset=0x132
+          id id=1 wire=1 size=8 offset=0x14a
+          name id=2 wire=5 size=10 offset=0x162
+      stats id=6 wire=6 size=56 offset=0x17c
+        Stats type=5 schema=1 offset=0x17c
+          health id=1 wire=3 size=8 offset=0x194
+          maxHealth id=2 wire=3 size=8 offset=0x1ac
+[exit 0]
+
+$ ./build/debug/chronicle validate "$DEMO_DIR"/scene_v1.bin
+Valid: format=1 Player V1
+[exit 0]
+
+$ ./build/debug/chronicle validate "$DEMO_DIR"/scene_v2.bin
+Valid: format=1 Player V2
+[exit 0]
+
+$ ./build/debug/chronicle validate "$DEMO_DIR"/scene_v3.bin
+Valid: format=1 Player V3
+[exit 0]
